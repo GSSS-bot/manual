@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSSS説明書</title>
+
+<style>
+:root {
+    /* =============================
+       カラー変数
+       ============================= */
+    --primary: #2c3e50;      /* メインの強調色（タイトル左線やサブタイトルなど） */
+    --bg-light: radial-gradient(circle, #ffffff, #f7f7f7, #eeeeee, #e6e6e6, #dedede);
+    --bg-white: #ffffff;     /* カードやフッターの背景色 */
+    --text-dark: #111111;    /* 本文やタイトルの基本文字色 */
+    --text-sub: #333333;     /* サブ説明や本文中の補助文字色 */
+    --shadow: rgba(0,0,0,0.1); /* カードやフッターの影の色 */
+}
+
+/* マーカーの色 */
+.highlight-half {
+  background: linear-gradient(transparent 40%, #ffd256 60%);
+}
+
+/* =============================
+   リンク
+   ============================= */
+.content a {
+    color: #395169;           /* リンク文字色 */
+    text-decoration: underline;
+}
+.content a:hover {
+    text-decoration: none;    /* ホバー時下線消す */
+}
+
+/* =============================
+   画像
+   ============================= */
+.content img {
+    max-width: 100%;      /* カード幅を超えない */
+    height: auto;         /* 縦横比維持 */
+    display: block;       /* 下の余白を消す */
+    margin: 0.5rem 0;     /* 上下余白 */
+    border: 1px solid #999; /* 枠線 */
+    border-radius: 12px;    /* 角丸 */
+}
+
+/* 名刺用画像サイズ */
+.business-card {
+    width: 400px;       /* 表示したい横幅を指定 */
+    max-width: 100%;    /* 画面幅が狭いときは縮小 */
+    height: auto;       /* 縦横比を維持 */
+    display: block;
+    margin: 0.5rem 0;   /* 左寄せ → 中央寄せにしたい場合、0をautoに変更 */
+    border: 1px solid #999;
+    border-radius: 12px;
+}
+
+/* =============================
+   動画
+   ============================= */
+.content video {
+    max-width: 100%;        /* カード幅を超えない */
+    height: auto;           /* 縦横比維持 */
+    display: block;         /* 下の余白を消す */
+    margin: 0.5rem 0;       /* 上下余白 */
+    border: 1px solid #999; /* 枠線 */
+    border-radius: 12px;    /* 角丸 */
+}
+
+/* =============================
+   ページ全体
+   ============================= */
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    background: var(--bg-light); /* ページ背景色 */
+    color: var(--text-dark);     /* ページ文字色 */
+    overflow-y: scroll;
+}
+
+/* =============================
+   タイトル・説明文
+   ============================= */
+h1 {
+    text-align: center;
+    color: var(--primary); /* タイトル文字色 */
+    margin: 2rem 1rem 1rem;
+    font-size: 24px;       /* タイトル文字サイズ */
+    font-weight: 700;      /* タイトル文字の太さ */
+}
+
+p.description {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-sub);  /* 説明文文字色 */
+    font-size: 16px;         /* 説明文文字サイズ */
+}
+
+/* =============================
+   サブタイトル
+   ============================= */
+.sub-title {
+    font-weight: bold;
+    color: var(--primary);   /* サブタイトル文字色 */
+    font-size: 18px;         /* サブタイトル文字サイズ */
+    margin: 2.5rem 0 1rem 0;
+}
+
+/* =============================
+   区切り線
+   ============================= */
+.divider {
+    border-top: 2px solid #ccc; /* 線の色・太さ */
+    margin: 3rem 0;
+}
+
+/* =============================
+   アコーディオン全体・アイテム・ヘッダー・内容
+   ============================= */
+/* アコーディオン全体 */
+.accordion {
+    max-width: 800px;  /* 横幅 */
+    margin: 0 auto 1rem;
+}
+
+/* アコーディオンアイテム */
+.item {
+    background: var(--bg-white); /* カード背景色 */
+    margin-bottom: 1rem;         /* カード間の余白 */
+    border-radius: 12px;         /* カード角丸 */
+    box-shadow: 0 2px 6px var(--shadow); /* カード影 */
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.item:active {
+    transform: scale(0.98); /* クリック時の押し込み感 */
+}
+
+/* アコーディオンヘッダー */
+.header {
+    width: 100%;
+    border: none;
+    background: var(--bg-white); /* ヘッダー背景色 */
+    padding: 1.5rem;             /* ヘッダー内側余白 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;           /* ヘッダー文字サイズ */
+    font-weight: 600;            /* ヘッダー文字太さ */
+    cursor: pointer;
+    text-align: left;
+}
+
+.header:hover {
+    background: #f7f7f7; /* ホバー色 */
+}
+
+/* タイトル部分（アイコン＋文字） */
+.title {
+    border-left: 6px solid var(--primary); /* 左線の色と太さ */
+    padding-left: 0.8rem;                  /* 左線から文字までの間隔 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;                           /* アイコンと文字の間隔 */
+}
+
+.icon {
+    width: 24px;   /* アイコン横幅 */
+    height: 24px;  /* アイコン高さ */
+}
+
+/* 矢印 */
+.arrow {
+    font-size: 1.2rem;         /* 矢印サイズ */
+    transition: transform 0.2s;
+}
+
+.item.open .arrow {
+    transform: rotate(180deg); /* 開いた時に矢印反転 */
+}
+
+/* アコーディオン内容 */
+.content {
+    overflow: hidden;
+    transition: height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;          /* 閉じている時の左右余白 */
+    color: var(--text-sub);     /* 本文文字色 */
+    font-size: 1rem;            /* 本文文字サイズ */
+    white-space: normal;        /* 改行自動折り返し */
+    overflow-wrap: break-word;  /* 長い単語も折り返す */
+    height: 0;                  /* 初期状態非表示 */
+    line-height: 1.8;           /* 行間 */
+}
+
+.item.open .content {
+    padding: 1rem 1.5rem 1.5rem; /* 開いた時の上下余白 */
+}
+
+/* 本文中に使うアイコン用 */
+.icon-inline {
+  width: 1.2em;           /* 文字より少し大きめ */
+  height: 1.2em;
+  vertical-align: -0.2em; /* 少し上げる（数値は調整可） */
+  margin-left: 0.25rem;
+}
+
+/* アイコン回転アニメーション */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* loader-circle を回転 */
+.icon-inline.loader-spin {
+  animation: spin 1s linear infinite; /* 1秒で1回転、無限ループ */
+}
+
+/* =============================
+   注意書き
+   ============================= */
+.note {
+    background-color: #e9e9e9;   /* 注意枠背景色 */
+    color: #222222;              /* 注意枠文字色 */
+    border-radius: 10px;         /* 注意枠角丸 */
+    padding: 1rem 1rem;          /* 注意枠内側余白：上下左右1rem */
+    margin: 2rem 0;              /* 注意枠外側余白：上下2rem、左右0 */
+    font-size: 0.95rem;          /* 注意枠文字サイズ */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08); /* 少し浮かせる影 */
+}
+
+/* 注意書き内の段組み（番号＋説明） */
+.note .step {
+    display: flex;
+    margin-bottom: 4px;      /* ステップ間の行間 */
+}
+
+/* 最初のステップの上マージンをリセット */
+.note .step:first-child {
+    margin-top: 0;
+}
+
+.note .num {                 /* 番号や見出し部分 */
+    width: 12em;             /* 固定幅で位置を揃える */
+    font-weight: bold;
+}
+
+.note .text {                /* 説明文部分 */
+    flex: 1;                 /* 残りの幅を埋める */
+}
+
+/* =============================
+   モーダルギャラリー
+   ============================= */
+/* サムネイル */
+.thumbnail {
+  width: 200px;           /* サムネイル幅 */
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* サムネイル全体 */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* 縦横均等 */
+}
+
+/* モーダル全体 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0,0,0,0.7); /* 背景を少し透けさせる */
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダル内の拡大画像 */
+.modal-content {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  border: 1px solid #fff;
+  border-radius: 12px;
+}
+
+/* 閉じるボタン */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 前後ナビ矢印 */
+.prev, .next {
+  position: absolute;
+  top: 50%;                   /* 縦中央 */
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 48px;            /* 大きめで視認性確保 */
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  user-select: none;
+  padding: 10px;
+}
+.prev:hover, .next:hover {
+  opacity: 1;                 /* ホバーで濃く */
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* =============================
+   フッター
+   ============================= */
+.footer {
+    background: var(--bg-white);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 14px;          /* フッター文字サイズ */
+    color: var(--text-sub);   /* フッター文字色 */
+    margin-top: 3rem;
+    box-shadow: 0 -2px 6px var(--shadow);
+}
+</style>
+
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+<!-- ここから本文 -->
+
+
+
+<h1>GSSS 建築事務による現場事務業務サポートとお願い</h1>
+<p class="description">必要な項目を開いてご確認ください。</p>
+<div class="accordion">
+
+<div class="divider"></div>
+
+<!-- ■■■★★★建築事務のサポート内容　ここから★★★■■■ --><div class="sub-title">建築事務によるサポート内容（杉山・椎野 担当区分）</div>
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="clover" class="icon"></i>
+<!-- ■■■安全書類■■■ -->安全書類の提出依頼・初回確認</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+協力業者へ安全書類（グリーンファイル）について、提出依頼・受領・初回チェックをします。<br><br>
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>安全書類提出依頼までの全体の流れ</b><br>
+① 契約開始(現場所長)　<span class="highlight-half">積算購買部へ見積書を提出し、業者との契約手続きを開始してください。</span><br>
+② 業者追加(積算購買部)　管理表<a href="https://komatagumi-my.sharepoint.com/:x:/g/personal/suzuki-s_komatagumi_co_jp/IQALAFsQLGAtTI4auWLJ_JVUAac59zLvfaE7HTHB_f9GKyE?e=kwKX8v" target="_blank">「安全書類確認状況」</a>へ業者が追加されます。契約日程に注意。<br>
+③ 注文書送付(経理課)　注文書が業者と現場所長へ送付されます。⇐ 契約完了扱いとなります。<br>
+④ 提出依頼(建築事務)　下記【建築事務の担当フロー】に沿った対応に移ります。<br>
+<br>
+<b>【建築事務の担当フロー】</b><br>
+① 管理表<a href="https://komatagumi-my.sharepoint.com/:x:/g/personal/suzuki-s_komatagumi_co_jp/IQALAFsQLGAtTI4auWLJ_JVUAac59zLvfaE7HTHB_f9GKyE?e=kwKX8v" target="_blank">「安全書類確認状況」</a>へ業者名が追加されたことと、契約日程を確認<br>
+② 小俣組と業者の契約完了次第、グリーンサイトにて企業招待＋提出依頼メールを送付<br>
+③ 提出された安全書類を受領、初回チェック、不備があれば修正依頼メールを送付<br>
+<br>
+<b>【お願い】</b><br>
+<span class="highlight-half">
+未契約業者には、安全書類の提出依頼はできません。<br>
+</span>
+※未契約業者＝注文書送付完了していない業者<br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+詳細は「お願いしたいこと」の該当項目をご確認ください。<br>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>安全書類の提出期限と依頼状況の確認方法</b><br>
+安全書類の提出期限は、基本的に「現場入場の1ヵ月前まで」と伝えています。<br>
+最新の提出依頼状況は管理表「安全書類確認状況」をご確認ください。
+
+<div class="gallery">
+  <img src="素材フォルダ/サポート01_安全書類確認状況.png" alt="説明文" class="thumbnail">
+</div>
+<br>
+
+  <div class="step">
+    <div class="num"><span class="highlight-half">安全書類の提出催促</span></div>
+    <div class="text"><span class="highlight-half">直接業者へお声かけいただくか、建築事務へお知らせください。</span></div>
+  </div>
+  <div class="step">
+    <div class="num">管理表の場所</div>
+    <div class="text">Teams上部タブまたは<a href="https://komatagumi-my.sharepoint.com/:x:/g/personal/suzuki-s_komatagumi_co_jp/IQALAFsQLGAtTI4auWLJ_JVUAac59zLvfaE7HTHB_f9GKyE?e=kwKX8v" target="_blank">
+こちら</a>からアクセスできます。</div>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="users" class="icon"></i>
+<!-- ■■■新規入場者名簿■■■ -->新規入場者の名簿登録状況確認・是正依頼</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+原則として、業者は現場入場前に作業員名簿の登録・提出をする必要があります。<br>
+入場時に作業員名簿へ登録されているかどうかを、建築事務にて確認いたします。<br>
+<br>
+<b>【建築事務の担当フロー】</b><br>
+現場から提出された新規入場者アンケートと業者から提出された作業員名簿を照合<br>
+
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+作業員名簿 <b>登録済</b>　➡グリーンサイトにて、送り出し・受け入れ教育実施日を登録します。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+作業員名簿 <b>未登録</b>　➡業者へ是正依頼します。<br>
+<br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+新規入場者アンケートの提出方法は「お願いしたいこと」の該当項目をご確認ください。<br>
+<br>
+<b>【お願い】</b><br>
+<span class="highlight-half">
+名簿チェック不要の業者をお知らせください。<br>
+</span>
+下請に編成する（書類を提出する）必要のない業者があれば、お知らせください。<br>
+例）契約予定がない、現場作業しなかった、、、など<br>
+※提出する新規アンケに「書類提出不要」とメモしていただけますと大変助かります。<br>
+
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>是正依頼は作業員1名につき原則1回</b><br>
+災防協前など、月一程度の頻度で再チェックし、不備未解消の場合は適宜催促します。
+</div>
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="layers" class="icon"></i>
+<!-- ■■■施工体制台帳■■■ -->施工体制台帳に関する安全書類の不備解消</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<b>【建築事務の担当フロー】</b><br>
+施工体制台帳作成に関する安全書類（グリーンファイル）の再チェック、及び不備修正依頼を行います。<br>
+グリーンファイルの提出状況および不備状況を、管理表「安全書類一覧」にまとめて管理します。<br>
+<br>
+<b>【お願い】</b><br>
+<span class="highlight-half">
+紙面への出力やキングジムへの綴じ込み作業は、現場にてご対応ください。<br>
+</span>
+管理表「安全書類一覧」は共有可能ですので、必要に応じてお声がけください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+不備が解消した書類から順に出力いただくことで、手戻りを減らすことができます。<br>
+<br>
+検査前に台帳整備が必要な場合は、検査日程がわかり次第、お早めにお知らせください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+業者への修正依頼が発生するため、やり取りに時間がかかります。<br>
+検査直前に慌てないためにも、1ヶ月前からの整備開始をおすすめします。<br>
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>民間工事の施工体制台帳について</b><br>
+従来の紙管理に加え、近年はグリーンサイトを活用したクラウド管理も一般的になりつつあります。<br>
+※施工体制台帳・再下請負通知書・編成表などを、現場で即時確認できることが前提となります。<br>
+</div>
+
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="monitor" class="icon"></i>
+<!-- ■■■デジタルサイネージ■■■ -->デジタルサイネージのコンテンツ作成</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+公共工事では「施工体系図」を仮囲いなどに掲示することが建設業法で定められています。<br>
+小俣組では、従来の紙掲示に代えてデジタルサイネージで表示する方式が主流になりつつあります。<br>
+表示コンテンツの作成を、建築事務がサポートいたします。<br>
+<br>
+<b>【建築事務の担当フロー】</b><br>
+施工体系図を表示するデジタルサイネージのコンテンツ作成、スケジュール設定（初回）<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+ご要望に沿ったコンテンツの作成と、スケジュール設定をします。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+現場開始後のコンテンツ変更・作成サポートも可能ですのでお知らせください。<br>
+<br>
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>レイアウト例</b><br>
+編集システム上での表示例です。実際のモニター映像とは異なる場合があります。<br>
+<div class="gallery">
+  <img src="素材フォルダ/DS/001.png" alt="説明文" class="thumbnail">
+  <img src="素材フォルダ/DS/002.png" alt="説明文" class="thumbnail">
+  <img src="素材フォルダ/DS/003.png" alt="説明文" class="thumbnail">
+  <img src="素材フォルダ/DS/004.png" alt="説明文" class="thumbnail">
+  <img src="素材フォルダ/DS/005.png" alt="説明文" class="thumbnail">
+</div>
+<br>
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>オブジェクト一覧</b><br>
+コンテンツに配置できるオブジェクトの一覧を動画にしたので、ご参照ください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+動画が小さい場合は右下の四角アイコン<i data-lucide="fullscreen" class="icon-inline"></i>
+をクリックするとフルスクリーンで表示されます。
+
+<video controls width="100%" poster="素材フォルダ/サポート04_デジタルサイネージサムネ.png">
+  <source src="素材フォルダ/サポート04_デジタルサイネージ動画.mp4" type="video/mp4">
+  お使いのブラウザは video タグをサポートしていません。
+</video>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>お問い合わせ先</b><br>
+JGS㈱にて、デジタルサイネージ設置サポートや初期設定をしていただきます。<br>
+エラー発生時は、いちど「電源の入れ直し」をお試しください。<br>
+解消しない場合は下記へお問い合わせください。<br>
+<img src="素材フォルダ/サポート04_デジタルサイネージ名刺.png" alt="説明文" class="business-card">
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+建築事務へ状況の共有をしていただけますと幸いです。
+</div>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ■■■★★★現場所長・現場員へのお願い　ここから★★★■■■ --><div class="sub-title">現場所長・現場員へお願いしたいこと</div>
+<div class="sub-title">　【重要】かならずご確認ください</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="user-x" class="icon"></i>
+<!-- ■■■未契約提出依頼不可■■■ -->未契約業者は安全書類の提出依頼ができません</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<span class="highlight-half">
+未契約業者には、安全書類の提出依頼はできません。<br>
+</span>
+※未契約業者＝注文書送付が完了していない業者<br>
+<br>
+<b>【お願い】</b><br>
+協力業者との契約は、できるだけ早めに進めてください。<br>
+<br>
+<b>【理由】</b><br>
+注文書に記載する「契約日程」は、「注文日 ⇒工期開始日 ⇒現場入場日」が正しい順序です。<br>
+「工期開始日より前に現場入場することになった」など、契約日程に矛盾が発生すると<br>
+注文書の再作成や見積書の再発行といった手戻り業務が発生します。<br>
+<br>
+こうした事態を防ぐため、<br>
+「原則、未契約（注文書未送付）の業者には、安全書類の提出依頼は行わない」としています。<br>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>どうしても急ぎで安全書類が必要な場合</b><br>
+積算購買部と建築事務へお知らせください。下記条件次第で、契約前の書類提出依頼が可能です。<br>
+<i data-lucide="check" class="icon-inline"></i>
+業者の入場日と契約日程に矛盾がなく、入場日が前倒しになる可能性はない。<br>
+<i data-lucide="check" class="icon-inline"></i>
+業者がグリーンサイトに加入済である。（別現場で提出履歴がある）<br>
+<i data-lucide="check" class="icon-inline"></i>
+現場から直接業者へ書類提出についてお声かけ可能（GS招待とメール送付は通常通り行います）<br>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="list-todo" class="icon"></i>
+<!-- ■■■安全書類確認状況■■■ -->契約・安全書類の管理表「安全書類確認状況」</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+安全書類の提出依頼状況などは、「安全書類確認状況」をご確認ください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+小俣組と業者の契約状況、契約日程・安全書類の提出状況についての管理表です。
+
+<div class="gallery">
+  <img src="素材フォルダ/サポート01_安全書類確認状況.png" alt="説明文" class="thumbnail">
+</div>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>管理表の場所</b><br>
+Teams上部タブまたは<a href="https://komatagumi-my.sharepoint.com/:x:/g/personal/suzuki-s_komatagumi_co_jp/IQALAFsQLGAtTI4auWLJ_JVUAac59zLvfaE7HTHB_f9GKyE?e=kwKX8v" target="_blank">
+こちら</a>からアクセスできます。<br>
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="file-question-mark" class="icon"></i>
+<!-- ■■■要書類提出業者■■■ -->安全書類提出対象となる業者の連絡先について</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+安全書類の提出依頼を行う際、業者の連絡先不明により対応が遅れる場合があります。<br>
+<br>
+<b>【お願い】</b><br>
+円滑な手続きのため、以下をご共有ください。<br>
+① 業者のグリーンサイト加入状況（原則として加入必須）<br>
+② 書類担当者の情報（氏名・電話番号・メールアドレス）<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+書類担当者不明の場合は、営業・現場担当者でもかまいません。<br>
+<br>
+※常連業者については不要です。<br>
+初めて、または久しぶりに取引する業者を対象としています。<br>
+
+
+<div class="note">
+<span class="highlight-half">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>資料配布にご協力ください</b><br>
+</span>
+初めてグリーンサイトで書類提出を行う業者は、<br>
+事前に小俣組を「オーナー企業登録」していただく必要があります。<br>
+手順を資料にまとめたので、保存して安全書類提出対象の業者へお渡しください。<br>
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:b:/s/msteams_0eda95/IQDK46NpT6gtQKR4FP_sfeZGAfcdys-1YJlaDEYCHH0Y-MQ?e=pMDKce" target="_blank">
+グリーンサイト「オーナー企業登録」のお願い</a><br>
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="sub-title">　【必須】現場開始準備</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="edit" class="icon"></i>
+<!-- ■■■安全書類雛形■■■ -->安全書類雛形Excelへ工事概要を記入</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<b>【お願い】</b><br>
+「労務安全関係提出書類」雛形Excelに、「工事概要」の記入をお願いします。<br>
+<br>
+<b>【手順】</b><br>
+① <i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/Es1PzOyk8W1MiddNNiTButoByZYB2UhG4uslW9Hbsd9igw?e=T2y0w2" target="_blank">
+【安全書類雛形】現場ごと
+</a>
+　左記リンクから、配属現場の雛形Excelを開く<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+ダブルクリックしてブラウザで開いてください。（デスクトップアプリ非推奨）<br>
+<br>
+② シート「記載事項」　J列「小俣組記入欄」の、水色で塗りつぶしセルに「工事概要」記入<br>
+<div class="gallery">
+  <img src="素材フォルダ/お願い_安全書類雛形_上.png" alt="説明文" class="thumbnail">
+</div>
+<br>
+③ インターネット環境下では自動保存されるので、そのまま閉じる<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+記入が完了しましたら、建築事務までお知らせください。<br>
+<br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+現場の雛形がない、どれかわからない場合はお尋ねください。<br>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>雛形を完成させるタイミングについて</b><br>
+J列下部「災害防止協議会兼施工体系図の作成に必要な項目」にある副会長などの情報は<br>
+現場開始前は不明の場合が多いため、初回は空欄で構いません。<br>
+<span class="highlight-half">判明次第、必ず追記してください。</span>なお、これらの項目は施工体系図に反映されます。
+
+<div class="gallery">
+  <img src="素材フォルダ/お願い_安全書類雛形_下.png" alt="説明文" class="thumbnail">
+</div>
+
+</div>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>グリーンサイトの現場プロジェクトサイト</b><br>
+雛形へ記入された「工事概要」をもとに、グリーンサイトの現場サイトを作成します。<br>
+現場事務所未定など、雛形に空白がある場合はダミー情報を入力いたしますので、<br>
+全項目記入完了したタイミングでお知らせいただけますと幸いです。
+</div>
+
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="megaphone" class="icon"></i>
+<!-- ■■■通知掲示■■■ -->現場へ施工体制台帳作成建設工事の通知を掲示</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<b>【お願い】</b><br>
+現場の指定箇所へ「施工体制台帳作成建設工事の通知」の掲示をお願いします。<br>
+<br>
+<b>【理由】</b><br>
+"再下請負契約が発生する際は、建設業法第14条の3第1項により元請への事前届出が義務"<br>
+上記について、業者へ周知するため、
+<i data-lucide="file-text" class="icon-inline"></i>書面通知と
+<span class="highlight-half">
+<i data-lucide="pin" class="icon-inline"></i>現場掲示</span>の両方が必要です。<br>
+<i data-lucide="file-text" class="icon-inline"></i>
+書面通知はグリーンサイトにて行っております。<br>
+<span class="highlight-half">
+<i data-lucide="pin" class="icon-inline"></i>
+現場掲示のご対応をお願いします。</span><br>
+
+<br>
+<b>【手順】</b><br>
+① <i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/Es1PzOyk8W1MiddNNiTButoByZYB2UhG4uslW9Hbsd9igw?e=T2y0w2" target="_blank">
+【安全書類雛形】現場ごと
+</a>
+　左記リンクから、配属現場の雛形Excelを開く<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+右クリックして、デスクトップアプリ「Excel」で開いてください。（ブラウザNG）<br>
+<br>
+② シート「通知」を確認<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+図のオレンジ枠部分が正しい情報かどうか確認してください。
+<div class="gallery">
+  <img src="素材フォルダ/お願い_通知掲示_通知確認.png" alt="説明文" class="thumbnail">
+</div>
+<br>
+③ 適宜、掲示場所のサイズに合わせて2部印刷（元はA4規格）<br>
+④ 仮囲いと、詰所・休憩所内の下請け業者が目にしやすい場所へ掲示<br>
+<br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+現場の雛形がない、どれかわからない場合はお尋ねください。<br>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>掲示場所について</b><br>
+建設業法規則では「工事現場の見やすい場所」とされています。<br>
+県や市の検査では、仮囲い（外部から視認可能な場所）への掲示を確認されることがあります。<br>
+そのため、以下二ヵ所への掲示を推奨しています。<br>
+
+  <div class="step">
+    <div class="num"><i data-lucide="pin" class="icon-inline"></i>
+仮囲い（外側）</div>
+    <div class="text">通行人・検査員が確認しやすい場所</div>
+  </div>
+
+  <div class="step">
+    <div class="num"><i data-lucide="pin" class="icon-inline"></i>
+詰所・休憩所内</div>
+    <div class="text">下請け業者が目にしやすい場所</div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="book-open-check" class="icon"></i>
+<!-- ■■■災防協規約■■■ -->災防協規約の作成・ファイリング</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<b>【お願い】</b><br>
+災防協規約を作成し、ファイリングしてください。<br>
+<br>
+<b>【理由】</b><br>
+建設工事災害防止協議会を適切に運営していることを示すため、運営規約の作成・保管が必要です。<br>
+監査や行政対応時にも、協議会の体制を明確に示す資料となります。<br>
+<br>
+<b>【手順】</b><br>
+① <i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgAODMzj6IAkRqB36nIcTVkUAd31ipYRQWITpYNy9uEMLQ4?e=k4XS2n" target="_blank">
+【災防協運営規約雛形】現場ごと
+</a>
+　左記リンクから、配属現場の雛形Excelを開く<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+右クリックして、デスクトップアプリ「Excel」で開いてください。（ブラウザNG）<br>
+<br>
+② 記載内容を確認、記入<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+あらかじめ「工事名称」「附則（現場開始日）」を記入します。誤りがないかご確認ください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+図のオレンジ枠部分へ災防協の開催曜日を記入してください。<br>
+<div class="gallery">
+  <img src="素材フォルダ/お願い_災防協規約_Excel.png" alt="説明文" class="thumbnail">
+</div>
+<br>
+③ A4用紙に印刷<br>
+④ 現場に設置する「災防協ファイル」の先頭へファイリング<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+ファイリング完了しましたら、建築事務までお知らせください。<br>
+<br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+現場の雛形がない、どれかわからない場合はお知らせください。<br>
+
+
+</div>
+</div>
+
+
+
+
+<div class="sub-title">　【必須】現場開始後</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="message-square-lock" class="icon"></i>
+<!-- ■■■Teams■■■ -->Teamsの確認とリアクション</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+建築事務からの連絡は「Microsoft Teams（マイクロソフト チームズ）」を利用します。<br>
+<br>
+<i data-lucide="smile" class="icon-inline"></i>
+Teamsで現場チームを作成して、現場員をメンバー招待します。<br>
+<i data-lucide="thumbs-up" class="icon-inline"></i>
+「投稿」には、既読機能がないので、確認したらリアクションをしてください。<br>
+<i data-lucide="bell-off" class="icon-inline"></i>
+通知機能が働かないことがあるので、1日1回は新しい投稿がないか、確認をお願いします。
+<img src="素材フォルダ/お願い_Teamsリアクション.png" alt="説明文">
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="users" class="icon"></i>
+<!-- ■■■新規アンケ提出■■■ -->新規入場者アンケートの提出</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+原則として、業者は現場入場前に作業員名簿の登録・提出をする必要があります。<br>
+元請会社は、作業員が名簿へ登録されているかどうか確認します。<br>
+<br>
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>新規入場者の名簿チェックについての担当区分</b><br>
+<span class="highlight-half">
+<i data-lucide="square-user-round" class="icon-inline"></i>
+<b>現場</b>　新規入場者教育を実施して、アンケートをスキャンして提出<br>
+</span>
+<i data-lucide="square-user-round" class="icon-inline"></i>
+<b>事務</b>　作業員名簿への登録状況を確認・是正依頼
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+フロー詳細はサポート内容の該当項目参照<br>
+<br>
+<b>【手順】</b><br>
+① 新規入場者教育の実施（新規入場者アンケートの確認）<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+一次企業や所属企業の誤り、記載文字が解読困難な場合は、修正や代筆をお願いします。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+（QR付アンケ前提）作業員本人にアンケートの記載内容をご確認いただき<br>
+相違があればご本人から所属業者へ「従業員情報の更新依頼」をするよう、お声かけをお願いします。<br>
+<br>
+② 新規入場者アンケートをスキャンして提出<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+入場日ごとにまとめる、業者は混在してOK、頻度高めに（できれば毎日）提出してください。<br>
+
+<br>
+<b>【お願い】</b><br>
+グリーンサイトから出力できる「QRコード付き新規入場者アンケート」の活用を推奨しています。<br>
+現場からも利用推進していただけますと幸いです。<br>
+<div class="gallery">
+  <img src="素材フォルダ/お願い_新規アンケ提出_小俣組レポート.png" alt="説明文" class="thumbnail">
+</div>
+
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/Eu0d0hdV8PpDrDGsMOFyr7kBVgUu06Fk_1Rza6Jm1X_duA?e=x7ici0" target="_blank">
+小俣組レポート_vol.002(新規アンケ)
+</a><br>
+上記資料を保存して、業者へ配布してください。<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="file-x" class="icon-inline"></i>
+アンケートを出力すると「送り出し教育を受けましたか？／いいえ」と記載されますが<br>
+元請にて該当項目を登録する仕様のため、「いいえ」のままで問題ありません。<br>
+</span>
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>QR付アンケの出力方法</b><br>
+作業員名簿 ➡「アンケート出力」 ➡対象の作業員をチェック ➡「アンケート出力」<br>
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://manual.kensetsu-site.com/gs/manual/manual-1188/manual-1265?hilite=%27%E6%96%B0%E8%A6%8F%E5%85%A5%E5%A0%B4%E8%80%85%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E3%81%AE%E5%87%BA%E5%8A%9B%27" target="_blank">
+グリーンサイト「使い方」
+</a>
+</div>
+
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>特別対応について</b><br>
+業者の実態によっては、直行直帰などの事情によりQR付アンケの出力・持参が難しい場合があります。<br>
+現場にて下記のような「特別対応」をお願いできれば大変助かります。<br>
+<span class="highlight-half">
+例）入場予定の方の新規アンケートを前日までにメールやFAXで提出いただく
+</span><br>
+<br>
+特別対応は現場にお任せする形となってしまいますが、ご協力いただけますと大変ありがたいです。<br>
+業者への周知などはこちらでもサポート可能です。
+
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>お問い合わせ先</b><br>
+JGS㈱にて、現場へ複合機設置後、スキャンの初期設定をしていただきます。</b><br>
+複合機のスキャン設定に不具合や変更がある場合は、下記へお問い合わせください。<br>
+<img src="素材フォルダ/サポート04_デジタルサイネージ名刺.png" alt="説明文" class="business-card">
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+建築事務へ状況の共有をしていただけますと幸いです。
+</div>
+
+</div>
+</div>
+
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="shield-check" class="icon"></i>
+<!-- ■■■業者指導■■■ -->業者指導（業者向け・災防協資料の配布）</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+現在、安全書類整備については、多くの業者の皆さまにご協力をいただいています。<br>
+一方で、以下のようなケースでは
+<span class="highlight-half">
+事務からの対応だけでは完結しないことがあります。<br>
+</span>
+<i data-lucide="check" class="icon-inline"></i>
+契約書類関係など、権限のある方同士での調整が必要<br>
+<i data-lucide="check" class="icon-inline"></i>
+業者の抵抗や無視で、書類整備が進まない<br>
+<i data-lucide="check" class="icon-inline"></i>
+二次以降の下請け業者の書類要否判断が必要<br>
+<br>
+<b>【お願い】</b><br>
+つきましては、下記の役割分担について、ご協力をお願いいたします。<br>
+<span class="highlight-half">
+<i data-lucide="square-user-round" class="icon-inline"></i>
+<b>現場</b>　業者への指示や指導・調整を担当<br>
+</span>
+<i data-lucide="square-user-round" class="icon-inline"></i>
+<b>事務</b>　不備チェックや依頼・連絡を担当<br>
+<br>
+
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>安全書類が提出されない、不備が解消しない場合</b><br>
+依頼メールのCCへ現場所長を追加し、「所長に直接ご相談ください」と案内します。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+これにより、ほとんどの業者さんは対応してくれると思います。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+実際に現場所長と業者間で調整が必要な場合は、ご対応をお願いします。<br>
+<br>
+
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>資料配布・業者指導</b><br>
+災防協前⽇までにTeams現場チームにて資料を共有するので、業者へ配布してください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+災防協⽇程がわかり次第、濱名課⻑のスケジュールへご登録をお願いします。<br>
+災防協当日に限らず、業者と話す機会があれば、<br>
+「メールをご確認のうえご対応ください」とお声かけいただけるとありがたいです。
+
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>小俣組レポート・その他資料</b><br>
+「小俣組レポート」は、業者向けに安全書類に関する基礎知識をコンパクトにまとめた資料です。<br>
+少しずつ理解を深めていただけるよう、現場で活用しやすい形で作成しています。<br>
+必要に応じて配布のご協力をお願いします。<br>
+
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/Eu0d0hdV8PpDrDGsMOFyr7kBVgUu06Fk_1Rza6Jm1X_duA?e=x7ici0" target="_blank">
+小俣組レポート
+</a><br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+業者へお伝えしたいテーマや話題がありましたら、Teamsにてご連絡ください。<br>
+些細な内容でも構いません。ご提案をお待ちしております。<br>
+<br>
+その他業者向け資料を下記フォルダへ格納しています。適宜ご活用ください。<br>
+
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/EpTboPK0GSxJsZz8zJFwYAcBLTWpkaYY334yYXQO9kq3Sg?e=cqmcXh" target="_blank">
+資料格納フォルダ
+</a>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="sub-title">　適宜ご確認・ご対応をお願いします</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="alert-circle" class="icon"></i>
+<!-- ■■■社保未加入不可■■■ -->【検査対策】作業員名簿・社会保険未加入者</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<b>【前提】</b><br>
+作業員の社会保険加入は法令上の義務です。<br>
+各種社会保険に未加入の作業員は、原則として現場での作業ができません。<br>
+また、未加入のまま作業をさせた場合、行政指導の対象となる可能性があります。<br>
+<br>
+<b>【実態】検査対応の背景</b><br>
+建築事務から業者へ加入状況更新の対応を依頼していますが、完全には改善していません。<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>検査対応</b><br>
+</span>
+作業員名簿で社会保険加入状況を確認されるため、台帳の検査で指摘を受けることがあります。<br>
+下記のような対応により、是正完了までの間、指摘を避けられた事例があります。<br>
+<br>
+<i data-lucide="message-circle-more" class="icon-inline"></i>
+「本社にて随時、対応及び指導を行っています」<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+本社の事務から業者へ対応依頼を行っており、業者の対応待ちということを説明してください。<br>
+<i data-lucide="message-circle-more" class="icon-inline"></i>
+「業者指導、国土交通省提供のガイドラインを掲示しています」<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+資料の配布やポスター掲示等、現場でも加入推進に努めていることをアピールしてください。<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>現場からも下記のご対応をお願いします。</b><br>
+</span>
+<i data-lucide="check" class="icon-inline"></i>
+業者へ「建築事務からの依頼メール」を確認して対応するよう促す<br>
+<i data-lucide="check" class="icon-inline"></i>
+資料配布、ポスター掲示で「作業員の社会保険加入は法令上の義務」ということを周知<br>
+<br>
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/Eu0d0hdV8PpDrDGsMOFyr7kBVgUu06Fk_1Rza6Jm1X_duA?e=x7ici0" target="_blank">
+小俣組レポート_vol.006(保険未加入)<br>
+</a>
+<i data-lucide="link" class="icon-inline"></i>
+<a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/EpTboPK0GSxJsZz8zJFwYAcBLTWpkaYY334yYXQO9kq3Sg?e=cqmcXh" target="_blank">
+資料格納フォルダ
+</a>
+<div class="gallery">
+  <img src="素材フォルダ/お願い_社保未加入者対応_小俣組レポート.png" alt="説明文" class="thumbnail">
+</div>
+
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="log-in" class="icon"></i>
+<!-- ■■■現場代理人入場■■■ -->【検査対策】作業員名簿・現場代理人の入場日</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<i data-lucide="loader-circle" class="icon-inline loader-spin"></i>
+準備中
+</div>
+</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="id-card" class="icon"></i>
+<!-- ■■■在留カード■■■ -->【検査対策】外国人就労者の在留カード管理</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<i data-lucide="loader-circle" class="icon-inline loader-spin"></i>
+準備中
+</div>
+</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="package" class="icon"></i>
+<!-- ■■■専任技術者■■■ -->【検査対策】専任技術者証明書類（県の現場のみ）</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<b>【前提】</b><br>
+専任技術者と主任技術者は兼任不可<br>
+専任技術者は営業所に常勤し、工事管理に専念する技術者であり、<br>
+現場に出る主任技術者と同一人物が兼任することはできません。<br>
+<br>
+<b>【実例】検査対応の背景</b><br>
+過去の県発注現場の検査では、「専任技術者と主任技術者が重複していないこと」を確認する目的で<br>
+施工体制台帳に加えて「専任技術者を証明する書類」の提出を求められるケースが多くありました。<br>
+該当書類を事前に収集し、重複がないことを説明・証明できる状態にしておくことを推奨します。<br>
+<br>
+
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>提出書類（様式）・検査対応</b><br>
+</span>
+以下いずれか（または両方）の提出を想定<br>
+<i data-lucide="check" class="icon-inline"></i>
+専任技術者一覧表
+　または　
+<i data-lucide="check" class="icon-inline"></i>
+専任技術者証明書<br>
+<div class="gallery">
+  <img src="素材フォルダ/お願い_専任技術者_一覧表.png" alt="説明文" class="thumbnail">
+  <img src="素材フォルダ/お願い_専任技術者_証明書.png" alt="説明文" class="thumbnail">
+</div>
+<i data-lucide="check" class="icon-inline"></i>
+別途「専任・主任技術者一覧表」を作成しておくと、説明がスムーズ<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>対応方針</b><br>
+</span>
+書類の提出依頼及び回収は、原則として現場でのご対応をお願いします。<br>
+必要に応じて、建築事務から業者への初回依頼や対象業者一覧の作成などのサポートが可能です。
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>対業者への証明書類の簡単な説明</b><br>
+<i data-lucide="check" class="icon-inline"></i>
+建設業法に基づく、専任技術者の配置を示す公式書類<br>
+<i data-lucide="check" class="icon-inline"></i>
+建設業許可の申請・更新時に作成され、営業所で保管されている<br>
+<i data-lucide="check" class="icon-inline"></i>
+施工体制台帳の検査時に提出する書類として使用予定
+</span>
+</div>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>書類が見つからないなどの理由で提出を渋られた場合の対処例</b><br>
+</span>
+<b>対業者</b><br>
+<i data-lucide="message-circle-more" class="icon-inline"></i>
+「建設業許可申請時に必ず作成する書類なので、営業所や担当者にご確認ください」<br>
+<i data-lucide="message-circle-more" class="icon-inline"></i>
+「もし見つからない場合は、今回の提出用としてあらためて作成をお願いします」<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+非推奨、最終手段です。<br>
+<br>
+<b>対検査員</b><br>
+<i data-lucide="message-circle-more" class="icon-inline"></i>
+「業者へ直接連絡し、重複していないことを確認済」<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+検査時に、書類はないが重複していないということ確認したと説明してください。<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+状況や検査官によっては、書類提出を求められる可能性があります。<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>小俣組独自ルール（例外ルール）</b><br>
+</span>
+「従業員が少ない」「一人親方である」など、やむを得ず重複してしまう業者について<br>
+「営業所から現場までの距離が50km以内の場合に限り、例外として重複可」としています。<br>
+
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+ただし、この独自ルールは業者へ直接伝えないでください。<br>
+「一度確認します」「確認の結果、今回は認められました」と、段階的に伝える運用としてください。
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="calendar-plus" class="icon"></i>
+<!-- ■■■工期延長対応■■■ -->工期延長対応（公共工事のみ）</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<i data-lucide="loader-circle" class="icon-inline loader-spin"></i>
+準備中
+</div>
+</div>
+
+
+
+<div class="sub-title">　おすすめ・Tips</div>
+
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="file-image" class="icon"></i>
+<!-- ■■■ポスター活用法■■■ -->【検査対策】建退共・CCUS推進活動（創意工夫アピール）</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+  <b>【前提】</b><br>
+建退共やCCUS制度については、各現場での周知・推進活動が求められています。<br>
+<br>
+<b>【実例】検査対応の背景</b><br>
+これらの取り組みをアピールすることで、「創意工夫」として評価されたケースがあります。<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>対応方法</b><br>
+</span>
+① 公式サイトからポスターや資料をダウンロードして印刷（ラミネート推奨）<br>
+② 作業員がよく通る・目にする場所に掲示<br>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+掲示状況を写真に残しておくと、検査時にアピールしやすいのでおすすめです。<br>
+<br>
+<br>
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>建退共（建設業退職金共済制度）</b><br>
+</span>
+業者へ周知・推進する場合、「まずは本部サイトで制度概要を見てもらって、<br>
+実際の加入や証明書発行は神奈川県支部サイトに進んでください」と案内してください。
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>制度全体の説明</b><br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+<a href="https://www.kentaikyo.taisyokukin.go.jp/" target="_blank">
+勤労者退職金共済機構 建退共本部</a>
+　<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+<a href="https://www.kentaikyo.taisyokukin.go.jp/siryou/siryou01.html" target="_blank">
+パンフレット・ポスター等</a>
+　<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+<a href="https://www.kentaikyo.taisyokukin.go.jp/special/index.html" target="_blank">
+公式特設サイト</a>
+<br>
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>神奈川県での具体的な手続き</b><br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+<a href="https://www.shin-ken.or.jp/kentaikyo/" target="_blank">
+建退共神奈川県支部（神奈川県建設業協会内）</a>
+</div>
+
+<span class="highlight-half">
+<i data-lucide="square-check-big" class="icon-inline"></i>
+<b>CCUS（建設キャリアアップシステム）</b><br>
+</span>
+<i data-lucide="corner-down-right" class="icon-inline"></i>
+小俣組ではCCUSタッチ運用していない現場もあります。ご留意ください。<br>
+
+
+<div class="note">
+<i data-lucide="pencil-line" class="icon-inline"></i>
+<b>制度全体（全国公式）</b><br>
+<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+<a href="https://www.ccus.jp/" target="_blank">
+勤労者退職金共済機構 建退共本部</a>
+　<i data-lucide="circle-arrow-right" class="icon-inline"></i>
+<a href="https://www.ccus.jp/p/document#brochure" target="_blank">
+パンフレット・ポスター等</a><br>
+
+
+</div>
+
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="tablet" class="icon"></i>
+<!-- ■■■iPadでグリーンサイト■■■ -->iPadでグリーンサイトを閲覧する方法</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+iPadの規定ブラウザ「Safari」では、グリーンサイトを閲覧できません。<br>
+PCで利用している「Edge」アプリをインストール、ログインが必要です。<br>
+詳しい操作方法は、動画をご確認ください。<br>
+<br>
+動画が小さい場合は右下の四角アイコン<i data-lucide="fullscreen" class="icon-inline"></i>
+をクリックするとフルスクリーンで表示されます。
+
+<video controls width="100%" poster="素材フォルダ/おすすめ_iPadでグリーンサイト.png">
+  <source src="素材フォルダ/おすすめ_iPadでグリーンサイト.mp4" type="video/mp4">
+  お使いのブラウザは video タグをサポートしていません。
+</video>
+
+</div>
+</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="settings" class="icon"></i>
+<!-- ■■■Edgeパスワード設定■■■ -->Edgeで記憶したパスワードの削除方法</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+既定推奨ブラウザの「Edge」では、<br>
+グリーンサイトなどのログインID・パスワードを記憶させることができます。<br>
+使わなくなったID・パスワード情報を削除する方法を紹介します。<br>
+<br>
+<b>【手順】</b><br>
+① Edgeの右上にある <i data-lucide="ellipsis" class="icon-inline"></i>メニューから <i data-lucide="settings" class="icon-inline"></i>設定を開く<br>
+<br>
+② <i data-lucide="key-round" class="icon-inline"></i>パスワードとオートフィルを開く<br>
+　➡「Microsoftパスワードマネージャー」をクリック<br>
+<br>
+③ 一覧から、削除したいID・パスワードの該当サイトを選択<br>
+　➡グリーンサイトの場合は「kensetsu-site.com」<br>
+<br>
+④ <i data-lucide="shield-check" class="icon-inline"></i>Windowsセキュリティのメッセージが出現<br>
+　➡PC起動時に入力するパスワードを入力して「OK」クリック<br>
+<br>
+⑤ <i data-lucide="user-lock" class="icon-inline"></i>削除したいIDを確認して「削除」クリック<br>
+
+</div>
+</div>
+
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="star" class="icon"></i>
+<!-- ■■■Dropboxスター■■■ -->Dropboxのお気に入り機能「スター」活用法</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<i data-lucide="loader-circle" class="icon-inline loader-spin"></i>
+準備中
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="message-circle-question-mark" class="icon"></i>
+<!-- ■■■TeamsTips■■■ -->Teamsのよくある質問</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<i data-lucide="loader-circle" class="icon-inline loader-spin"></i>
+準備中
+</div>
+</div>
+
+
+
+<div class="item">
+<button class="header">
+<span class="title"><i data-lucide="bot" class="icon"></i>
+<!-- ■■■AI活用■■■ -->AI活用のススメ</span>
+<span class="arrow">▼</span>
+</button>
+<div class="content">
+<i data-lucide="loader-circle" class="icon-inline loader-spin"></i>
+準備中
+</div>
+</div>
+
+
+
+
+
+
+<!-- ■■■★★★現場員へのお願い　ここまで★★★■■■ -->
+</div>
+
+
+<!-- フッター -->
+<div class="footer" id="footer" style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.9rem; color:#333;">
+
+  <!-- フッター上段 -->
+  <span style="display:flex; align-items:center; gap:0.4rem;">
+    <i data-lucide="building" class="icon" style="width:18px;height:18px;"></i>
+    株式会社小俣組　建築事務
+    <span style="margin:0 0.5rem;">｜</span>
+    <i data-lucide="clock" class="icon" style="width:18px;height:18px;"></i>
+    最終更新日：2025/10/24 10:30
+  </span>
+
+  <!-- 更新履歴 -->
+  <div style="display:block; text-align:left; margin-top:0.8rem;"> <!-- margin-top を調整 -->
+    <div style="font-weight:bold; margin-bottom:0.3rem;">更新履歴：</div>
+    <ul style="margin:0; padding-left:1rem; list-style:disc;">
+<li>
+2025/10/24	【更新】	Edgeで記憶したパスワードの削除方法
+</li>
+<li>
+2025/10/23	【追加】	Dropboxのお気に入り機能「スター」活用法
+</li>
+<li>
+2025/10/22	【追加】	Teamsのよくある質問
+</li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+<script>
+// =============================
+// Lucide アイコン初期化
+// =============================
+lucide.createIcons();
+
+// =============================
+// アコーディオン開閉の仕組み
+// =============================
+var items = document.querySelectorAll(".item");
+
+items.forEach(function(item){
+var header = item.querySelector(".header");
+var content = item.querySelector(".content");
+
+header.addEventListener("click", function(){
+
+if(item.classList.contains("open")){
+  // -----------------------------
+  // 閉じる処理
+  // -----------------------------
+  content.style.height = content.scrollHeight + "px";
+  requestAnimationFrame(function(){
+    content.style.height = "0px";
+  });
+  item.classList.remove("open");
+
+} else {
+  // -----------------------------
+  // 他のアコーディオンを閉じる処理
+  // -----------------------------
+  items.forEach(function(other){
+    if(other !== item && other.classList.contains("open")){
+      let otherContent = other.querySelector(".content");
+      otherContent.style.height = otherContent.scrollHeight + "px";
+      requestAnimationFrame(function(){
+        otherContent.style.height = "0px";
+      });
+      other.classList.remove("open");
+    }
+  });
+
+  // -----------------------------
+  // 開く処理
+  // -----------------------------
+  content.style.height = content.scrollHeight + "px";
+  item.classList.add("open");
+
+  // -----------------------------
+  // transition終了後に高さを自動調整＆ヘッダーを上部にスクロール
+  // -----------------------------
+  content.addEventListener("transitionend", function handler(){
+    if(item.classList.contains("open")){
+      content.style.height = "auto";
+      header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    content.removeEventListener("transitionend", handler);
+  });
+}
+
+});
+});
+
+// =============================
+// モーダルギャラリー処理（ギャラリー単位）
+// =============================
+const modal = document.createElement('div');
+modal.className = 'modal';
+modal.innerHTML = `
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div class="prev" id="prevBtn" data-lucide="chevron-left"></div>
+  <div class="next" id="nextBtn" data-lucide="chevron-right"></div>
+`;
+document.body.appendChild(modal);
+
+lucide.createIcons(); // モーダル内アイコン初期化
+
+const modalImage = document.getElementById("modalImage");
+const closeBtn = modal.querySelector(".close");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+let currentThumbnails = []; // 現在開いているギャラリーのサムネ配列
+let currentIndex = 0;
+
+// ギャラリー単位でサムネイル設定
+document.querySelectorAll('.gallery').forEach(gallery => {
+  const thumbnails = gallery.querySelectorAll('.thumbnail');
+  
+  thumbnails.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      currentThumbnails = thumbnails; // 今開いたギャラリーのサムネ配列
+      currentIndex = index;
+      showImage();
+      modal.style.display = "flex";
+    });
+  });
+});
+
+// 閉じるボタン
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// 背景クリックでも閉じる
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+// 前へ
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + currentThumbnails.length) % currentThumbnails.length;
+  showImage();
+});
+
+// 次へ
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % currentThumbnails.length;
+  showImage();
+});
+
+// 画像切替
+function showImage() {
+  modalImage.src = currentThumbnails[currentIndex].src;
+}
+</script>
+
+</body>
+</html>
