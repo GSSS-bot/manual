@@ -84,17 +84,29 @@ body {
    タイトル・説明文
    ============================= */
 h1 {
-    text-align: center;
+    text-align: left;
     color: var(--primary); /* タイトル文字色 */
-    margin: 2rem 1rem 1rem;
+    max-width: 800px;          /* ← 横幅を揃える */
+    margin: 2rem auto 0.5rem;  /* ← 中央配置＋左寄せ */
     font-size: 24px;       /* タイトル文字サイズ */
     font-weight: 700;      /* タイトル文字の太さ */
+    padding: 1.2rem 0;         /* ← 背景の立幅を確保（左右は0で左端揃え） */
+    background: linear-gradient(
+        to right,
+        rgba(156, 156, 156, 0.5),
+        rgba(255, 210, 86, 0.00)
+    );
+
+    border-radius: 10px;
+    
 }
 
+
 p.description {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--text-sub);  /* 説明文文字色 */
+    text-align: left;          /* ← 左寄せ */
+    max-width: 800px;          /* ← h1と同幅 */
+    margin: 0 auto 2rem;       /* ← 中央配置 */
+    color: var(--primary);  /* 説明文文字色 */
     font-size: 16px;         /* 説明文文字サイズ */
 }
 
@@ -353,8 +365,11 @@ p.description {
 
 
 
-<h1>GSSS 建築事務による現場事務業務サポートとお願い</h1>
-<p class="description">必要な項目を開いてご確認ください。</p>
+<h1>　【GSSS】建築事務による現場事務業務サポートとお願い</h1>
+<p class="description"><b>本ページは社内向け資料です。URLの第三者への共有はご遠慮ください。<br>
+確認したい項目をクリック・タップすると、内容が表示されます。</b>
+</p>
+
 <div class="accordion">
 
 <div class="divider"></div>
@@ -1416,7 +1431,7 @@ PCで利用している「Edge」アプリをインストール、ログイン�
     株式会社小俣組　建築事務
     <span style="margin:0 0.5rem;">｜</span>
     <i data-lucide="clock" class="icon" style="width:18px;height:18px;"></i>
-    最終更新日：2026/01/27 10:00
+    最終更新日：2026/01/27 12:00
   </span>
 
   <!-- 更新履歴 -->
@@ -1424,13 +1439,13 @@ PCで利用している「Edge」アプリをインストール、ログイン�
     <div style="font-weight:bold; margin-bottom:0.3rem;">更新履歴：</div>
     <ul style="margin:0; padding-left:1rem; list-style:disc;">
 <li>
-2026/01/27	【公開】本サイトを公開しました。随時追加・更新予定です。
+2026/01/27 【公開】本サイトを公開しました。随時追加・更新予定です。
 </li>
 <li>
-20YY/MM/DD	【追加】title
+20YY/MM/DD 【追加】title
 </li>
 <li>
-20YY/MM/DD	【追加】title
+20YY/MM/DD 【追加】title
 </li>
     </ul>
   </div>
@@ -1567,6 +1582,4 @@ function showImage() {
 </script>
 
 </body>
-
 </html>
-
