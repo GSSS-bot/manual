@@ -485,626 +485,626 @@ th,td{
 <body>
 
   <!-- ===========================
-       HEADER（サイトタイトル＋説明）
-     =========================== -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
+  HEADER（サイトタイトル＋説明）
+  =========================== -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
 
-      <!-- サイトタイトル -->
-      <h1 class="site-title">現場サポート運用ガイド</h1>
+  <!-- サイトタイトル -->
+  <h1 class="site-title">現場サポート運用ガイド</h1>
 
-      <!-- 利用方法（details/summary） -->
-      <details class="intro" id="intro">
-        <summary aria-controls="intro-body">
-          本サイトの利用方法　⚠️第三者へのURL共有厳禁⚠️
-        </summary>
+  <!-- 利用方法（details/summary） -->
+  <details class="intro" id="intro">
+  <summary aria-controls="intro-body">
+  本サイトの利用方法　⚠️第三者へのURL共有厳禁⚠️
+  </summary>
 
-        <div id="intro-body" class="intro-body">
+  <div id="intro-body" class="intro-body">
 
-          <ul>
-            <li>社内向け資料です。URLの第三者への共有はご遠慮ください。</li>
-            <li>左側の「もくじ」から章を選ぶと、右側に本文が表示されます。</li>
-            <li>検索欄でワード検索できます。（Enter＝次へ）</li>
-          </ul>
+  <ul>
+    <li>社内向け資料です。URLの第三者への共有はご遠慮ください。</li>
+    <li>左側の「もくじ」から章を選ぶと、右側に本文が表示されます。</li>
+    <li>検索欄でワード検索できます。（Enter＝次へ）</li>
+  </ul>
 
-          <h3>ご一読ください</h3>
-          <ul>
-            <li>【重要】必読項目です</li>
-            <li>【必須】現場開始準備</li>
-            <li>【必須】現場開始後</li>
-          </ul>
-          <p>
-          現場の書類業務に関する、現場と事務の役割分担について掲載しています。<br>
-          現場で対応（黄色枠）の部分をご確認ください。
-          </p>
+  <h3>ご一読ください</h3>
+  <ul>
+    <li>【重要】必読項目です</li>
+    <li>【必須】現場開始準備</li>
+    <li>【必須】現場開始後</li>
+  </ul>
+  <p>
+  現場の書類業務に関する、現場と事務の役割分担について掲載しています。<br>
+  現場で対応（黄色枠）の部分をご確認ください。
+  </p>
 
-          <h3>その他の項目</h3>
-          <ul>
-            <li>現場対応・検査対策：検査での指摘回避例・傾向と対策を掲載</li>
-            <li>お役立ち・Tips：業務効率化のための小技や便利情報</li>
-          </ul>
-          <p>
-            現場運営の円滑化・事務負担の軽減につながる情報を掲載しています。<br>
-            困りごとがある時に確認してください。
-          </p>
+  <h3>その他の項目</h3>
+  <ul>
+    <li>現場対応・検査対策：検査での指摘回避例・傾向と対策を掲載</li>
+    <li>お役立ち・Tips：業務効率化のための小技や便利情報</li>
+  </ul>
+  <p>
+  現場運営の円滑化・事務負担の軽減につながる情報を掲載しています。<br>
+  困りごとがある時に確認してください。
+  </p>
 
-        </div>
-      </details>
+  </div>
+  </details>
 
-    </div>
-  </header>
+  </div>
+</header>
 
-<!-- ===========================
-       LAYOUT 開始（TOC＋本文）
-     =========================== -->
+  <!-- ===========================
+  LAYOUT 開始（TOC＋本文）
+  =========================== -->
   <div id="app" class="layout">
 
-    <!-- ===========================
-         ASIDE：左カラム（目次＋検索）
-       =========================== -->
-    <aside id="tocPanel" role="complementary" aria-label="もくじ">
+  <!-- ===========================
+  ASIDE：左カラム（目次＋検索）
+  =========================== -->
+  <aside id="tocPanel" role="complementary" aria-label="もくじ">
 
-      <!-- もくじ見出し -->
-      <header class="toc-head">
-        <p class="toc-title">もくじ</p>
-      </header>
+  <!-- もくじ見出し -->
+  <header class="toc-head">
+  <p class="toc-title">もくじ</p>
+  </header>
 
-      <!-- 本文検索（右カラムだけを検索） -->
-<div class="search" aria-label="本文検索">
+  <!-- 本文検索（右カラムだけを検索） -->
+  <div class="search" aria-label="本文検索">
   <form id="searchForm" role="search" class="search-form">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="検索ワードを入力"
-      aria-label="本文検索キーワード"
-    />
+  <input
+  type="text"
+  id="searchInput"
+  placeholder="検索ワードを入力"
+  aria-label="本文検索キーワード"
+  />
 
-    <button type="button" id="prevBtn" aria-label="前へ">前へ</button>
-    <button type="button" id="nextBtn" aria-label="次へ">次へ</button>
+  <button type="button" id="prevBtn" aria-label="前へ">前へ</button>
+  <button type="button" id="nextBtn" aria-label="次へ">次へ</button>
 
-    <!-- 件数を“箱の中”へ -->
-    <div class="meta" id="searchMeta" aria-live="polite">0件</div>
+  <!-- 件数を“箱の中”へ -->
+  <div class="meta" id="searchMeta" aria-live="polite">0件</div>
   </form>
-</div>
+  </div>
 
-      <!-- 目次本体（アンカーはJS依存のためIDを維持） -->
+  <!-- 目次本体（アンカーはJS依存のためIDを維持） -->
 <nav class="toc" id="tocNav" aria-label="章と項目の一覧">
 
   <details class="chapter" open>
-    <summary>【重要】必読項目です</summary>
-    <ul>
-      <li><a href="#sec-intro-0">建築事務サポートの前提</a></li>
-      <li><a href="#sec-important-1">早期契約にご協力ください</a></li>
-      <li><a href="#sec-important-2">契約・書類提出状況の確認</a></li>
-      <li><a href="#sec-important-3">協力会社の連絡先情報共有</a></li>
-    </ul>
+  <summary>【重要】必読項目です</summary>
+  <ul>
+    <li><a href="#sec-intro-0">建築事務サポートの前提</a></li>
+    <li><a href="#sec-important-1">早期契約にご協力ください</a></li>
+    <li><a href="#sec-important-2">契約・書類提出状況の確認</a></li>
+    <li><a href="#sec-important-3">協力会社の連絡先情報共有</a></li>
+  </ul>
   </details>
 
   <details class="chapter" open>
-    <summary>【必須】現場開始準備</summary>
-    <ul>
-      <li><a href="#sec-prep-1">「安全書類雛形」の入力</a></li>
-      <li><a href="#sec-prep-2">「台帳作成通知」の掲示</a></li>
-      <li><a href="#sec-prep-3">「災防協規約」綴じ込み</a></li>
-    </ul>
+  <summary>【必須】現場開始準備</summary>
+  <ul>
+    <li><a href="#sec-prep-1">「安全書類雛形」の入力</a></li>
+    <li><a href="#sec-prep-2">「台帳作成通知」の掲示</a></li>
+    <li><a href="#sec-prep-3">「災防協規約」綴じ込み</a></li>
+  </ul>
   </details>
 
-<details class="chapter">
+  <details class="chapter">
   <summary>【任意】運用確認・提案</summary>
   <ul>
     <li><a href="#sec-plus-1">デジタルサイネージ</a></li>
     <li><a href="#sec-plus-2">新規入場者教育動画</a></li>
   </ul>
-</details>
+  </details>
 
   <details class="chapter" open>
-    <summary>【必須】現場開始後</summary>
-    <ul>
-      <li><a href="#sec-after-1">Teams確認とリアクション</a></li>
-      <li><a href="#sec-after-2">新規入場者アンケート提出</a></li>
-      <li><a href="#sec-after-3">協力会社指導（災防協資料）</a></li>
-      <li><a href="#sec-after-4">施工体制台帳作成</a></li>
-    </ul>
+  <summary>【必須】現場開始後</summary>
+  <ul>
+    <li><a href="#sec-after-1">Teams確認とリアクション</a></li>
+    <li><a href="#sec-after-2">新規入場者アンケート提出</a></li>
+    <li><a href="#sec-after-3">協力会社指導（災防協資料）</a></li>
+    <li><a href="#sec-after-4">施工体制台帳作成</a></li>
+  </ul>
   </details>
 
   <details class="chapter">
-    <summary>現場対応・検査対策</summary>
-    <ul>
-      <li><a href="#sec-field-1">工期延長対応手順</a></li>
-      <li><a href="#sec-field-2">社会保険未加入者</a></li>
-      <li><a href="#sec-field-3">現場代理人の入場日</a></li>
-      <li><a href="#sec-field-4">在留カードの管理</a></li>
-      <li><a href="#sec-field-5">専任技術者証明書類</a></li>
-      <li><a href="#sec-field-6">ポスターでアピール</a></li>
-    </ul>
+  <summary>現場対応・検査対策</summary>
+  <ul>
+    <li><a href="#sec-field-schedule">工期延長対応手順</a></li>
+    <li><a href="#sec-field-insurance">社会保険未加入者</a></li>
+    <li><a href="#sec-field-agent">現場代理人の入場日</a></li>
+    <li><a href="#sec-field-residence">在留カードの管理</a></li>
+    <li><a href="#sec-field-engineer">専任技術者証明書類</a></li>
+    <li><a href="#sec-field-poster">ポスターでアピール</a></li>
+  </ul>
   </details>
 
   <details class="chapter">
-    <summary>お役立ち・Tips</summary>
-    <ul>
-      <li><a href="#sec-tips-1">iPadでグリーンサイト閲覧</a></li>
-      <li><a href="#sec-tips-2">Edge記憶のパスワード削除</a></li>
-      <li><a href="#sec-tips-3">Dropbox「スター」活用</a></li>
-      <li><a href="#sec-tips-4">AI活用のススメ</a></li>
-    </ul>
+  <summary>お役立ち・Tips</summary>
+  <ul>
+    <li><a href="#sec-tips-ipad">iPadでグリーンサイト閲覧</a></li>
+    <li><a href="#sec-tips-edge-password">Edge記憶のパスワード削除</a></li>
+    <li><a href="#sec-tips-dropbox-star">Dropbox「スター」活用</a></li>
+    <li><a href="#sec-tips-ai">AI活用のススメ</a></li>
+  </ul>
   </details>
 
 </nav>
 
-      <!-- 最終更新日 -->
-      <p class="last-updated">最終更新日：2026-02-17</p>
+  <!-- 最終更新日 -->
+  <p class="last-updated">最終更新日：2026-02-17</p>
 
-    </aside>
+  </aside>
 
-<!-- ===========================
-         MAIN：右カラム（本文）
-       =========================== -->
-    <main id="content" role="main">
+  <!-- ===========================
+  MAIN：右カラム（本文）
+  =========================== -->
+<main id="content" role="main">
 
-      <!-- ===========================
-           【重要】必読項目です（イントロ）
-         =========================== -->
+  <!-- ===========================
+  【重要】必読項目です（イントロ）
+  =========================== -->
 <section id="sec-intro-0" class="section" tabindex="-1" aria-labelledby="sec-intro-0-title">
   <h1 id="sec-intro-0-title">建築事務による現場書類業務サポートの考え方</h1>
 
   <p class="lead">
-    現場の仕事には、主に「現場業務」と「書類業務」があります。<br>
-    「書類業務」の一部を本社で吸い取ることで、<br>
-    「現場業務」の効率アップにつながると考え【建築事務チーム】を発足しました。
+  現場の仕事には、主に「現場業務」と「書類業務」があります。<br>
+  「書類業務」の一部を本社で吸い取ることで、<br>
+  「現場業務」の効率アップにつながると考え【建築事務チーム】を発足しました。
   </p>
 
   <div class="card card-g">
-    <h3><i data-lucide="info"></i>サポート導入の目的</h3>
-    <ul>
-      <li>現場の残業・書類業務負担の軽減</li>
-      <li>若手が現場業務を学ぶ時間の確保</li>
-      <li>PC作業など、デスクに張り付いている事務のほうが効率的に行える業務を分担</li>
-    </ul>
+  <h3><i data-lucide="info"></i>サポート導入の目的</h3>
+  <ul>
+    <li>現場の残業・書類業務負担の軽減</li>
+    <li>若手が現場業務を学ぶ時間の確保</li>
+    <li>PC作業など、デスクに張り付いている事務のほうが効率的に行える業務を分担</li>
+  </ul>
   </div>
 
   <div class="card card-y">
-    <h3><i data-lucide="hard-hat"></i> 現場判断が必要になる場面</h3>
-    <p>
-      書類業務の中には、事務だけでは前に進めないものがあります。<br>
-      方針の決定や協力会社への対応など、現場判断が必要になる場合は判断・対応を現場へ戻します。
-    </p>
+  <h3><i data-lucide="hard-hat"></i> 現場判断が必要になる場面</h3>
+  <p>
+  書類業務の中には、事務だけでは前に進めないものがあります。<br>
+  方針の決定や協力会社への対応など、現場判断が必要になる場合は判断・対応を現場へ戻します。
+  </p>
   </div>
 
-      <!-- ===========================
-       （この部分採用するかどうか確認中のため残地）
+  <!-- ===========================
+  （この部分採用するかどうか確認中のため残地）
 
   <div class="card card-g">
-    <h3><i data-lucide="file-text"></i> 判断が必要になる具体例</h3>
+  <h3><i data-lucide="file-text"></i> 判断が必要になる具体例</h3>
 
-    <p><b>例①：協力会社へ不備修正依頼を続けても解消しない</b></p>
-    <p>
-      検査が近づき、事務からの催促にも反応がない場合、現場所長からの強い催促や<br>
-      「その書類は不要」といった判断がないと平行線のまま無駄なやり取りが続いてしまいます。
-    </p>
+  <p><b>例①：協力会社へ不備修正依頼を続けても解消しない</b></p>
+  <p>
+  検査が近づき、事務からの催促にも反応がない場合、現場所長からの強い催促や<br>
+  「その書類は不要」といった判断がないと平行線のまま無駄なやり取りが続いてしまいます。
+  </p>
 
-    <p><b>例②：台帳検査前の準備・整備</b></p>
-    <p>
-      書類を確認する中で「ここは検査で指摘されそうだ」と気づくケースがあります。<br>
-      建築事務は検査に立ち会わないため、最終的な対応は現場判断となります。<br>
-      事務からは事前準備の観点で助言を行いますが、採用するかどうかは現場で判断してください。
-    </p>
+  <p><b>例②：台帳検査前の準備・整備</b></p>
+  <p>
+  書類を確認する中で「ここは検査で指摘されそうだ」と気づくケースがあります。<br>
+  建築事務は検査に立ち会わないため、最終的な対応は現場判断となります。<br>
+  事務からは事前準備の観点で助言を行いますが、採用するかどうかは現場で判断してください。
+  </p>
   </div>
-           =========================== -->
+  =========================== -->
 
   <div class="card card-g">
-    <h3><i data-lucide="handshake"></i> この運用ガイドについて</h3>
-    <p>
-      この「現場サポート運用ガイド」は、各業務がどんな理由で必要なのか、<br>
-      現場と事務でどのように役割分担すると業務がスムーズになるのか──その目安を共有することが目的です。<br>
-      現場と事務の両方が動きやすくなるよう、今後も相談しながら改善していければと考えています。
-    </p>
+  <h3><i data-lucide="handshake"></i> この運用ガイドについて</h3>
+  <p>
+  この「現場サポート運用ガイド」は、各業務がどんな理由で必要なのか、<br>
+  現場と事務でどのように役割分担すると業務がスムーズになるのか──その目安を共有することが目的です。<br>
+  現場と事務の両方が動きやすくなるよう、今後も相談しながら改善していければと考えています。
+  </p>
   </div>
 
   <div class="card card-g">
-    <h3><i data-lucide="info"></i> 使い方</h3>
-    <p>
-    <ul>
-      <li>社内向け資料です。URLの第三者への共有はご遠慮ください。</li>
-      <li>左側の「もくじ」から章を選ぶと、右側に本文が表示されます。</li>
-      <li>検索欄でワード検索できます。（Enter＝次へ）</li>
-    </ul>
+  <h3><i data-lucide="info"></i> 使い方</h3>
+  <p>
+  <ul>
+    <li>社内向け資料です。URLの第三者への共有はご遠慮ください。</li>
+    <li>左側の「もくじ」から章を選ぶと、右側に本文が表示されます。</li>
+    <li>検索欄でワード検索できます。（Enter＝次へ）</li>
+  </ul>
   </div>
 
-          <h3>ご一読ください</h3>
-          <ul>
-            <li>【重要】必読項目です</li>
-            <li>【必須】現場開始準備</li>
-            <li>【必須】現場開始後</li>
-          </ul>
-          <p>
-          現場の書類業務に関する、現場と事務の役割分担について掲載しています。<br>
-          現場で対応（黄色枠）の部分をご確認ください。
-          </p>
+  <h3>ご一読ください</h3>
+  <ul>
+    <li>【重要】必読項目です</li>
+    <li>【必須】現場開始準備</li>
+    <li>【必須】現場開始後</li>
+  </ul>
+  <p>
+  現場の書類業務に関する、現場と事務の役割分担について掲載しています。<br>
+  現場で対応（黄色枠）の部分をご確認ください。
+  </p>
 
-          <h3>その他の項目</h3>
-          <ul>
-            <li>現場対応・検査対策：検査での指摘回避例・傾向と対策を掲載</li>
-            <li>お役立ち・Tips：業務効率化のための小技や便利情報</li>
-          </ul>
-          <p>
-            現場運営の円滑化・事務負担の軽減につながる情報を掲載しています。<br>
-            困りごとがある時に確認してください。
-          </p>
+  <h3>その他の項目</h3>
+  <ul>
+    <li>現場対応・検査対策：検査での指摘回避例・傾向と対策を掲載</li>
+    <li>お役立ち・Tips：業務効率化のための小技や便利情報</li>
+  </ul>
+  <p>
+  現場運営の円滑化・事務負担の軽減につながる情報を掲載しています。<br>
+  困りごとがある時に確認してください。
+  </p>
 
   <p class="lead">
-    <br>※ 本サイトは常に最新情報を保証するものではありません。<br>
-    更新履歴・最終更新日を確認のうえ、判断に迷う場合や急ぎの案件は、建築事務まで直接確認してください。
+  <br>※ 本サイトは常に最新情報を保証するものではありません。<br>
+  更新履歴・最終更新日を確認のうえ、判断に迷う場合や急ぎの案件は、建築事務まで直接確認してください。
   </p>
 
 </section>
 
-      
-      <!-- ===========================
-           【重要】必読項目です（1）
-         =========================== -->
-      <section id="sec-important-1" class="section" tabindex="-1" aria-labelledby="sec-important-1-title">
-        <h1 id="sec-important-1-title">協力会社との早期契約にご協力ください</h1>
 
-        <p class="lead">
-          安全書類（グリーンファイル）の提出依頼は契約完了（注文書送付）後のみ可能です。
-        </p>
+  <!-- ===========================
+  【重要】必読項目です（1）
+  =========================== -->
+<section id="sec-important-1" class="section" tabindex="-1" aria-labelledby="sec-important-1-title">
+  <h1 id="sec-important-1-title">協力会社との早期契約にご協力ください</h1>
 
-        <!-- 現場で対応 -->
-        <div class="card card-y">
-          <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-          <ul>
-            <li>協力会社との契約手続きを早めに開始</li>
-            <li>「経理の注文書送付のタイミングで契約完了扱い」ということを認識</li>
-            <li>どうしても契約前に書類が必要な場合は、積算購買部・建築事務へ事前相談</li>
-          </ul>
-        </div>
+  <p class="lead">
+  安全書類（グリーンファイル）の提出依頼は契約完了（注文書送付）後のみ可能です。
+  </p>
 
-        <!-- 建築事務がサポート（灰色のカード） -->
-        <div class="card card-g">
-          <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-          <ul>
-            <li>契約日程の矛盾がないか確認し、必要に応じて訂正依頼・調整</li>
-            <li>契約完了後のみ、協力会社へ安全書類（グリーンファイル）の提出依頼</li>
-          </ul>
-        </div>
+  <!-- 現場で対応 -->
+  <div class="card card-y">
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>協力会社との契約手続きを早めに開始</li>
+    <li>「経理の注文書送付のタイミングで契約完了扱い」ということを認識</li>
+    <li>どうしても契約前に書類が必要な場合は、積算購買部・建築事務へ事前相談</li>
+  </ul>
+  </div>
 
-        <!-- 注意（赤のカード） -->
-        <div class="card card-r" role="alert">
-          <h3><i data-lucide="triangle-alert"></i>未契約のままでは依頼不可</h3>
-          <p>
-            未契約＝協力会社へ注文書が未送付の状態で書類提出依頼すると、<br>
-            現場所長・積算購買部・経理課・協力会社を巻き込む手戻りが発生するケースがあります。<br>
-            そのため、原則として「未契約の場合は書類提出依頼不可」としています。
-          </p>
-        </div>
+  <!-- 建築事務がサポート（灰色のカード） -->
+  <div class="card card-g">
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>契約日程の矛盾がないか確認し、必要に応じて訂正依頼・調整</li>
+    <li>契約完了後のみ、協力会社へ安全書類（グリーンファイル）の提出依頼</li>
+  </ul>
+  </div>
 
-        <!-- 注意（赤のカード） -->
-        <div class="card card-r" role="alert">
-          <h3><i data-lucide="triangle-alert"></i> 契約日程と入場予定日の整合性チェック</h3>
-          <p>
-            <b>契約日程は、契約日 ➡ 工期開始日 ➡ 現場入場日 この順番が正しい形です。</b><br>
-            工期開始日より前に入場予定となる場合は、お早めに積算購買部へ連絡してください。<br>
-            とくに、台帳作成対象の現場では、この整合性が取れていないと指摘対象となるケースがあります。
-          </p>
-        </div>
+  <!-- 注意（赤のカード） -->
+  <div class="card card-r" role="alert">
+  <h3><i data-lucide="triangle-alert"></i>未契約のままでは依頼不可</h3>
+  <p>
+  未契約＝協力会社へ注文書が未送付の状態で書類提出依頼すると、<br>
+  現場所長・積算購買部・経理課・協力会社を巻き込む手戻りが発生するケースがあります。<br>
+  そのため、原則として「未契約の場合は書類提出依頼不可」としています。
+  </p>
+  </div>
 
-        <!-- 全体の流れ -->
-        <h3>全体の流れ</h3>
-        <ol>
-          <li>契約開始（現場所長）　　　：積算購買部へ見積書を提出し、契約手続きを開始</li>
-          <li>協力会社追加（積算購買部）：管理表「安全書類確認状況」に協力会社を追加</li>
-          <li>注文書送付（経理課）　　　：協力会社と現場所長へ注文書送付（契約完了扱い）</li>
-          <li>提出依頼（建築事務）　　　：GSで企業招待＋提出依頼 → 受領・初回チェック・不備修正依頼</li>
-        </ol>
+  <!-- 注意（赤のカード） -->
+  <div class="card card-r" role="alert">
+  <h3><i data-lucide="triangle-alert"></i> 契約日程と入場予定日の整合性チェック</h3>
+  <p>
+  <b>契約日程は、契約日 ➡ 工期開始日 ➡ 現場入場日 この順番が正しい形です。</b><br>
+  工期開始日より前に入場予定となる場合は、お早めに積算購買部へ連絡してください。<br>
+  とくに、台帳作成対象の現場では、この整合性が取れていないと指摘対象となるケースがあります。
+  </p>
+  </div>
 
-        <h3>未契約依頼が可能なケース（例外）</h3>
-        <ul>
-          <li>契約日程（契約日・工期開始日）と現場入場予定日に矛盾がない</li>
-          <li>現場入場の前倒し可能性がない</li>
-          <li>協力会社がグリーンサイトへ加入済（過去に提出履歴あり）</li>
-          <li>現場から積算購買部への相談および、協力会社へ直接依頼の声かけが可能</li>
-        </ul>
-      </section>
+  <!-- 全体の流れ -->
+  <h3>全体の流れ</h3>
+  <ol>
+    <li>契約開始（現場所長）　　　：積算購買部へ見積書を提出し、契約手続きを開始</li>
+    <li>協力会社追加（積算購買部）：管理表「安全書類確認状況」に協力会社を追加</li>
+    <li>注文書送付（経理課）　　　：協力会社と現場所長へ注文書送付（契約完了扱い）</li>
+    <li>提出依頼（建築事務）　　　：GSで企業招待＋提出依頼 → 受領・初回チェック・不備修正依頼</li>
+  </ol>
 
-      <!-- ===========================
-           【重要】必読項目です（2）
-         =========================== -->
-      <section id="sec-important-2" class="section" tabindex="-1" aria-labelledby="sec-important-2-title">
-        <h1 id="sec-important-2-title">契約・書類提出状況の確認</h1>
+  <h3>未契約依頼が可能なケース（例外）</h3>
+  <ul>
+    <li>契約日程（契約日・工期開始日）と現場入場予定日に矛盾がない</li>
+    <li>現場入場の前倒し可能性がない</li>
+    <li>協力会社がグリーンサイトへ加入済（過去に提出履歴あり）</li>
+    <li>現場から積算購買部への相談および、協力会社へ直接依頼の声かけが可能</li>
+  </ul>
+</section>
 
-        <p class="lead">
-          協力会社との契約・書類提出依頼状況は、管理表「安全書類確認状況」をご確認ください。
-        </p>
+  <!-- ===========================
+  【重要】必読項目です（2）
+  =========================== -->
+<section id="sec-important-2" class="section" tabindex="-1" aria-labelledby="sec-important-2-title">
+  <h1 id="sec-important-2-title">契約・書類提出状況の確認</h1>
 
-        <!-- 現場で対応 -->
-        <div class="card card-y">
-          <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-          <ul>
-            <li>管理表「安全書類確認状況」で下記を確認</li>
-              <ul>
-                <li>契約日程の整合性</li>
-                <li>進捗状況（注文書送付、書類提出依頼、書類受領）</li>
-              </ul>
-            <li>契約予定の協力会社名がない場合は、積算購買部へ連絡</li>
-          </ul>
-        </div>
+  <p class="lead">
+  協力会社との契約・書類提出依頼状況は、管理表「安全書類確認状況」をご確認ください。
+  </p>
 
-        <!-- 建築事務がサポート -->
-        <div class="card card-g">
-          <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-          <ul>
-            <li>「注文書送付日」項目へ日付が入力され次第、協力会社へ書類提出依頼を行う</li>
-            <li>書類提出依頼～受領の進捗状況を管理表へ反映</li>
-          </ul>
-        </div>
+  <!-- 現場で対応 -->
+  <div class="card card-y">
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>管理表「安全書類確認状況」で下記を確認</li>
+    <ul>
+      <li>契約日程の整合性</li>
+      <li>進捗状況（注文書送付、書類提出依頼、書類受領）</li>
+    </ul>
+    <li>契約予定の協力会社名がない場合は、積算購買部へ連絡</li>
+  </ul>
+  </div>
 
-        <!-- 補足 -->
-        <div class="card card-g">
-          <h3><i data-lucide="info"></i> 補足（提出期限と催促）</h3>
-          <div class="body">
-          書類提出期限について、協力会社へ「現場入場の1ヵ月前まで」と伝えています。<br>
-          書類提出催促は、協力会社へ直接お声かけいただくか、建築事務へお知らせください。<br>
-          └ 「◯◯工事の安全書類（グリーンファイル）につきまして、提出が未確認です。<br>
-          　　入場は◯/◯予定のため、◯日までにご対応をお願いいたします。」
-          </div>
-        </div>
+  <!-- 建築事務がサポート -->
+  <div class="card card-g">
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>「注文書送付日」項目へ日付が入力され次第、協力会社へ書類提出依頼を行う</li>
+    <li>書類提出依頼～受領の進捗状況を管理表へ反映</li>
+  </ul>
+  </div>
 
-        <h3>ファイルの場所</h3>
-        <ul>
-          <li>
-          <a href="https://komatagumi-my.sharepoint.com/:x:/g/personal/suzuki-s_komatagumi_co_jp/IQALAFsQLGAtTI4auWLJ_JVUAcnLLzlXzsE9L65rth9oT1E?e=AYu6GQ" target="_blank">
-            こちらからアクセスできます。
-          </a>
-          </li>
-          <li>ファイル：安全書類確認状況.xlsx</li>
-          <li>Teams現場チームのタブに、現場シートへのリンクを設置しています。</li>
-          <li>管理表へ入力する際はセルを塗りつぶしてください。（任意の色）</li>
-        </ul>
+  <!-- 補足 -->
+  <div class="card card-g">
+  <h3><i data-lucide="info"></i> 補足（提出期限と催促）</h3>
+  <div class="body">
+  書類提出期限について、協力会社へ「現場入場の1ヵ月前まで」と伝えています。<br>
+  書類提出催促は、協力会社へ直接お声かけいただくか、建築事務へお知らせください。<br>
+  └ 「◯◯工事の安全書類（グリーンファイル）につきまして、提出が未確認です。<br>
+  　　入場は◯/◯予定のため、◯日までにご対応をお願いいたします。」
+  </div>
+  </div>
 
-      </section>
+  <h3>ファイルの場所</h3>
+  <ul>
+    <li>
+    <a href="https://komatagumi-my.sharepoint.com/:x:/g/personal/suzuki-s_komatagumi_co_jp/IQALAFsQLGAtTI4auWLJ_JVUAcnLLzlXzsE9L65rth9oT1E?e=AYu6GQ" target="_blank">
+    こちらからアクセスできます。
+    </a>
+    </li>
+    <li>ファイル：安全書類確認状況.xlsx</li>
+    <li>Teams現場チームのタブに、現場シートへのリンクを設置しています。</li>
+    <li>管理表へ入力する際はセルを塗りつぶしてください。（任意の色）</li>
+  </ul>
 
-      <!-- ===========================
-           【重要】必読項目です（3）
-         =========================== -->
-      <section id="sec-important-3" class="section" tabindex="-1" aria-labelledby="sec-important-3-title">
-        <h1 id="sec-important-3-title">協力会社の連絡先情報を共有してください</h1>
+</section>
 
-        <p class="lead">
-          安全書類（グリーンファイル）の提出依頼を行う際、協力会社の連絡先不明により対応が遅れる場合があります。
-        </p>
+  <!-- ===========================
+  【重要】必読項目です（3）
+  =========================== -->
+<section id="sec-important-3" class="section" tabindex="-1" aria-labelledby="sec-important-3-title">
+  <h1 id="sec-important-3-title">協力会社の連絡先情報を共有してください</h1>
 
-        <!-- 現場で対応 -->
-        <div class="card card-y">
-          <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-          <ul>
-            <li>新規契約の協力会社について、下記を建築事務へ共有</li>
-              <ul>
-                <li>グリーンサイト加入状況（原則として加入必須）</li>
-                <li>書類担当者の情報（氏名・電話番号・メールアドレス）<br>
-                └ 書類担当者不明の場合は、営業・現場担当者でもかまいません。</li>
-              </ul>
-            <li>協力会社へ、上記についてまとめた資料を送付</li>
-          </ul>
-        </div>
+  <p class="lead">
+  安全書類（グリーンファイル）の提出依頼を行う際、協力会社の連絡先不明により対応が遅れる場合があります。
+  </p>
 
-        <!-- 補足 -->
-        <div class="card card-g">
-          <h3><i data-lucide="info"></i> 補足（資料配布）</h3>
-          <div class="body">
-          グリーンサイトにて書類提出を行う場合、<br>
-          協力会社側で初回のみ「オーナー企業登録」していただく必要があります。<br>
-          オーナー企業登録＝協力会社と小俣組のアカウント紐づけ操作<br><br>
-          手順を資料にまとめたので、保存して安全書類提出対象の協力会社へお渡しください。<br>
-          └ 「グリーンサイトにて企業招待するに際しまして、弊社をオーナー企業登録していただく必要がございます。<br>
-          　　手順についての資料を送付いたしますのでご確認の上、ご対応をお願いいたします。」
-          </div>
-        </div>
+  <!-- 現場で対応 -->
+  <div class="card card-y">
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>新規契約の協力会社について、下記を建築事務へ共有</li>
+    <ul>
+      <li>グリーンサイト加入状況（原則として加入必須）</li>
+      <li>書類担当者の情報（氏名・電話番号・メールアドレス）<br>
+      └ 書類担当者不明の場合は、営業・現場担当者でもかまいません。</li>
+    </ul>
+    <li>協力会社へ、上記についてまとめた資料を送付</li>
+  </ul>
+  </div>
 
-        <h3>ファイルの場所</h3>
-        <ul>
-          <li>
-          <a href="https://komatagumi.sharepoint.com/:b:/s/msteams_0eda95/IQDK46NpT6gtQKR4FP_sfeZGAfcdys-1YJlaDEYCHH0Y-MQ?e=iAxAWq" target="_blank">
-            こちらからアクセスできます。
-          </a>
-          </li>
-          <li>ファイル：【ご対応依頼】グリーンサイト「オーナー企業登録」.pdf</li>
-          <li>資料内容：協力会社側で次の2点を対応　① オーナー企業登録　② 建築事務へメール送付</li>
-        </ul>
+  <!-- 補足 -->
+  <div class="card card-g">
+  <h3><i data-lucide="info"></i> 補足（資料配布）</h3>
+  <div class="body">
+  グリーンサイトにて書類提出を行う場合、<br>
+  協力会社側で初回のみ「オーナー企業登録」していただく必要があります。<br>
+  オーナー企業登録＝協力会社と小俣組のアカウント紐づけ操作<br><br>
+  手順を資料にまとめたので、保存して安全書類提出対象の協力会社へお渡しください。<br>
+  └ 「グリーンサイトにて企業招待するに際しまして、弊社をオーナー企業登録していただく必要がございます。<br>
+  　　手順についての資料を送付いたしますのでご確認の上、ご対応をお願いいたします。」
+  </div>
+  </div>
 
-      </section>
+  <h3>ファイルの場所</h3>
+  <ul>
+    <li>
+    <a href="https://komatagumi.sharepoint.com/:b:/s/msteams_0eda95/IQDK46NpT6gtQKR4FP_sfeZGAfcdys-1YJlaDEYCHH0Y-MQ?e=iAxAWq" target="_blank">
+    こちらからアクセスできます。
+    </a>
+  </li>
+    <li>ファイル：【ご対応依頼】グリーンサイト「オーナー企業登録」.pdf</li>
+    <li>資料内容：協力会社側で次の2点を対応　① オーナー企業登録　② 建築事務へメール送付</li>
+  </ul>
 
-      <!-- ===========================
-           【必須】現場開始準備（1）
-         =========================== -->
+</section>
+
+  <!-- ===========================
+  【必須】現場開始準備（1）
+  =========================== -->
 <section id="sec-prep-1" class="section" tabindex="-1" aria-labelledby="sec-prep-1-title">
   <h1 id="sec-prep-1-title">「安全書類雛形」の入力</h1>
 
   <p class="lead">
-    「労務安全関係提出書類」雛形Excelへ現場の基本情報として「工事概要」を入力してください。<br>
-    入力内容をもとに、グリーンサイトの現場プロジェクトサイトを作成します。
+  「労務安全関係提出書類」雛形Excelへ現場の基本情報として「工事概要」を入力してください。<br>
+  入力内容をもとに、グリーンサイトの現場プロジェクトサイトを作成します。
   </p>
 
   <!-- 現場で対応（黄） -->
   <div class="card card-y">
-    <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-    <ul>
-      <li>担当現場の安全書類雛形Excel ＞シート「記載事項」 ＞「小俣組入力欄」へ「工事概要」を入力<br>
-          └ ブラウザで開いてそのまま入力してください。自動保存されます。</li>
-      <li>建築事務へ入力完了報告（現場開始時点で未確定の項目は空白でOK）</li>
-    </ul>
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>担当現場の安全書類雛形Excel ＞シート「記載事項」 ＞「小俣組入力欄」へ「工事概要」を入力<br>
+    └ ブラウザで開いてそのまま入力してください。自動保存されます。</li>
+    <li>建築事務へ入力完了報告（現場開始時点で未確定の項目は空白でOK）</li>
+  </ul>
   </div>
 
   <!-- 建築事務がサポート（灰） -->
   <div class="card card-g">
-    <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-    <ul>
-      <li>入力内容をもとに、グリーンサイトの現場プロジェクトサイトを作成</li>
-      <li>Teams現場チームにて「現場サイト閲覧用ユーザーID・PW」を共有</li>
-    </ul>
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>入力内容をもとに、グリーンサイトの現場プロジェクトサイトを作成</li>
+    <li>Teams現場チームにて「現場サイト閲覧用ユーザーID・PW」を共有</li>
+  </ul>
   </div>
 
   <!-- 注意（赤） -->
   <div class="card card-r" role="alert">
-    <h3><i data-lucide="triangle-alert"></i> 入力する内容・タイミング</h3>
-    <ul>
-      <li>JV現場は必ず「会社名（J30）」を変更してください。</li>
-      <li>現場開始前で未定の情報（現場事務所や副会長等）については、空欄で構いません。<br>
-      判明次第、追記してお知らせください。</li>
-    </ul>
+  <h3><i data-lucide="triangle-alert"></i> 入力する内容・タイミング</h3>
+  <ul>
+    <li>JV現場は必ず「会社名（J30）」を変更してください。</li>
+    <li>現場開始前で未定の情報（現場事務所や副会長等）については、空欄で構いません。<br>
+  判明次第、追記してお知らせください。</li>
+  </ul>
   </div>
-  
+
   <!-- 補足（灰） -->
   <div class="card card-g">
-    <h3><i data-lucide="info"></i> 補足</h3>
-    <div class="body">
-      <ul>
-        <li>雛形空白項目は、現場サイト作成時に一時的なダミー情報を登録する場合があります。</li>
-        <li>全項目が確定したタイミングで、建築事務へ再度お知らせください。</li>
-      </ul>
-    </div>
+  <h3><i data-lucide="info"></i> 補足</h3>
+  <div class="body">
+  <ul>
+    <li>雛形空白項目は、現場サイト作成時に一時的なダミー情報を登録する場合があります。</li>
+    <li>全項目が確定したタイミングで、建築事務へ再度お知らせください。</li>
+  </ul>
+  </div>
   </div>
 
   <h3>手順</h3>
   <ol>
     <li>どちらかで雛形Excelへアクセス：<br>
-      ① 下記「ファイルの場所」からフォルダへ<br>
-      ② Teams現場チームの投稿から直接雛形Excelへ</li>
+    ① 下記「ファイルの場所」からフォルダへ<br>
+    ② Teams現場チームの投稿から直接雛形Excelへ</li>
     <li>担当現場の雛形Excelをダブルクリックしてブラウザで開く（コピー作成不要）</li>
     <li>シート「記載事項」J列の水色セルへ工事概要を入力</li>
     <li>自動保存されるので、そのまま閉じる</li>
     <li>建築事務へ「入力完了」の連絡をする</li>
   </ol>
 
-        <h3>ファイルの場所</h3>
-        <ul>
-          <li>
-          <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgDNT8zspPFtTInXTTYkwbraAX_NO3pk5wYFllZytAubtH8?e=gpB2UO" target="_blank">
-            こちらからアクセスできます。
-          </a>
-          </li>
-          <li>フォルダ：【安全書類雛形】現場ごと</li>
-          <li>ファイル：【労務安全関係提出書類】工期末 現場名.xlsx</li>
-          <li>雛形が見つからない場合は、建築事務へご連絡ください。</li>
-        </ul>
+  <h3>ファイルの場所</h3>
+  <ul>
+    <li>
+    <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgDNT8zspPFtTInXTTYkwbraAX_NO3pk5wYFllZytAubtH8?e=gpB2UO" target="_blank">
+    こちらからアクセスできます。
+    </a>
+    </li>
+    <li>フォルダ：【安全書類雛形】現場ごと</li>
+    <li>ファイル：【労務安全関係提出書類】工期末 現場名.xlsx</li>
+    <li>雛形が見つからない場合は、建築事務へご連絡ください。</li>
+  </ul>
 
 </section>
 
-      <!-- ===========================
-           【必須】現場開始準備（2）
-         =========================== -->
-      <section id="sec-prep-2" class="section" tabindex="-1" aria-labelledby="sec-prep-2-title">
-        <h1 id="sec-prep-2-title">「台帳作成通知」の掲示</h1>
-
-        <p class="lead">
-          "再下請負契約が発生する際は、建設業法第14条の3第1項により元請への事前届出が義務"<br>
-          上記について、一次⇔二次、二次⇔三次…といった「再下請契約」が発生する場合、<br>
-          協力会社（一次業者）へ周知するため「書面通知」と「現場掲示」の両方が必須です。
-        </p>
-
-        <!-- 現場で対応 -->
-        <div class="card card-y">
-          <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-          <ul>
-          <li>
-            通知文を印刷し、現場の下記箇所等に掲示
-            <ul>
-              <li>詰所や休憩所など、協力会社の目に留まる場所</li>
-              <li>仮囲い（検査対策）</li>            
-            </ul>
-          </li>
-        </ul>
-        </div>
-
-        <!-- 注意 -->
-        <div class="card card-r" role="alert">
-          <h3><i data-lucide="triangle-alert"></i> 注意</h3>
-          <p>「書面通知」は建築事務が対応しますが、現場への掲示が無いと法令要件を満たしません。<br>
-          「現場掲示」のご対応をお願いします。</p>
-        </div>
-
-        <!-- 補足 -->
-        <div class="card card-g">
-          <h3><i data-lucide="info"></i> 補足（推奨掲示場所）</h3>
-          <div class="body">
-            建設業法規則では「工事現場の見やすい場所」とされています。<br>
-            県や市の検査では、仮囲い（外部から視認可能な場所）への掲示を確認されることがあります。
-          </div>
-        </div>
-        
-        <h3>手順</h3>
-        <ol>
-          <li>どちらかで雛形Excelへアクセス：<br>
-            ① 下記「ファイルの場所」からフォルダへ<br>
-            ② Teams現場チームの投稿から直接雛形Excelへ</li>
-          <li>担当現場の雛形Excelを右クリックしてExcelアプリで開く（ブラウザNG）</li>
-          <li>シート「通知」を開き、オレンジ枠の内容を確認</li>
-          <li>掲示場所に合わせて2部印刷</li>
-          <li>詰所／休憩所、仮囲い（外側）に掲示</li>
-        </ol>
-
-
-        <h3>ファイルの場所</h3>
-        <ul>
-          <li>
-          <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgDNT8zspPFtTInXTTYkwbraAX_NO3pk5wYFllZytAubtH8?e=gpB2UO" target="_blank">
-            こちらからアクセスできます。
-          </a>
-          </li>
-          <li>フォルダ：【安全書類雛形】現場ごと</li>
-          <li>ファイル：【労務安全関係提出書類】工期末 現場名.xlsx</li>
-          <li>雛形が見つからない場合は、建築事務へご連絡ください。</li>
-        </ul>
-
-      </section>
-
-      <!-- ===========================
-           【必須】現場開始準備（3）
-         =========================== -->
-
-<section id="sec-prep-3" class="section" tabindex="-1" aria-labelledby="sec-prep-3-title">
-  <h1 id="sec-prep-3-title">「災防協規約」の作成・綴じ込み</h1>
+  <!-- ===========================
+  【必須】現場開始準備（2）
+  =========================== -->
+<section id="sec-prep-2" class="section" tabindex="-1" aria-labelledby="sec-prep-2-title">
+  <h1 id="sec-prep-2-title">「台帳作成通知」の掲示</h1>
 
   <p class="lead">
-    建設工事災害防止協議会を適切に運営していることを示すため、<br>
-    各現場で災防協運営規約を作成し、ファイリングして保管します。<br>
-    規約は監査や行政確認において、協議会体制を明示する重要な資料となります。
+  "再下請負契約が発生する際は、建設業法第14条の3第1項により元請への事前届出が義務"<br>
+  上記について、一次⇔二次、二次⇔三次…といった「再下請契約」が発生する場合、<br>
+  協力会社（一次業者）へ周知するため「書面通知」と「現場掲示」の両方が必須です。
   </p>
 
-  <!-- 現場で対応（黄） -->
+  <!-- 現場で対応 -->
   <div class="card card-y">
-    <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>
+    通知文を印刷し、現場の下記箇所等に掲示
     <ul>
-      <li>担当現場の災防協運営規約雛形Excel　＞Excel内メモ参照して必要項目を入力<br>
-          └ デスクトップアプリ「Excel」で開いてください（ブラウザは非推奨）</li>
-      <li>A4用紙に印刷し、現場の「災防協ファイル」の先頭へ綴じ込み</li>
-      <li>ファイリング後、建築事務へ完了報告</li>
-    </ul>
+    <li>詰所や休憩所など、協力会社の目に留まる場所</li>
+    <li>仮囲い（検査対策）</li>            
+  </ul>
+  </li>
+  </ul>
   </div>
 
-  <!-- 建築事務がサポート（灰） -->
-  <div class="card card-g">
-    <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-    <ul>
-      <li>必要に応じて雛形の所在案内や補足説明を実施</li>
-      <li>規約の記載内容について不備がないか確認</li>
-      <li>監査・行政対応へ向けて、規約の整備状況を管理</li>
-    </ul>
-  </div>
-
-  <!-- 注意（赤） -->
+  <!-- 注意 -->
   <div class="card card-r" role="alert">
-    <h3><i data-lucide="triangle-alert"></i> 注意</h3>
-    <p>
-      災防協の開催曜日や開始日は、協議会案内や議事録作成にも利用されます。<br>
-      確定前の仮情報を入力した場合は、確定後に必ず更新してください。
-    </p>
+  <h3><i data-lucide="triangle-alert"></i> 注意</h3>
+  <p>「書面通知」は建築事務が対応しますが、現場への掲示が無いと法令要件を満たしません。<br>
+  「現場掲示」のご対応をお願いします。</p>
+  </div>
+
+  <!-- 補足 -->
+  <div class="card card-g">
+  <h3><i data-lucide="info"></i> 補足（推奨掲示場所）</h3>
+  <div class="body">
+  建設業法規則では「工事現場の見やすい場所」とされています。<br>
+  県や市の検査では、仮囲い（外部から視認可能な場所）への掲示を確認されることがあります。
+  </div>
   </div>
 
   <h3>手順</h3>
   <ol>
     <li>どちらかで雛形Excelへアクセス：<br>
-      ① 下記「ファイルの場所」からフォルダへ<br>
-      ② Teams現場チームの投稿から直接雛形Excelへ</li>
+    ① 下記「ファイルの場所」からフォルダへ<br>
+    ② Teams現場チームの投稿から直接雛形Excelへ</li>
+    <li>担当現場の雛形Excelを右クリックしてExcelアプリで開く（ブラウザNG）</li>
+    <li>シート「通知」を開き、オレンジ枠の内容を確認</li>
+    <li>掲示場所に合わせて2部印刷</li>
+    <li>詰所／休憩所、仮囲い（外側）に掲示</li>
+    </ol>
+
+
+  <h3>ファイルの場所</h3>
+  <ul>
+    <li>
+    <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgDNT8zspPFtTInXTTYkwbraAX_NO3pk5wYFllZytAubtH8?e=gpB2UO" target="_blank">
+    こちらからアクセスできます。
+    </a>
+    </li>
+    <li>フォルダ：【安全書類雛形】現場ごと</li>
+    <li>ファイル：【労務安全関係提出書類】工期末 現場名.xlsx</li>
+    <li>雛形が見つからない場合は、建築事務へご連絡ください。</li>
+  </ul>
+
+</section>
+
+  <!-- ===========================
+  【必須】現場開始準備（3）
+  =========================== -->
+
+<section id="sec-prep-3" class="section" tabindex="-1" aria-labelledby="sec-prep-3-title">
+  <h1 id="sec-prep-3-title">「災防協規約」の作成・綴じ込み</h1>
+
+  <p class="lead">
+  建設工事災害防止協議会を適切に運営していることを示すため、<br>
+  各現場で災防協運営規約を作成し、ファイリングして保管します。<br>
+  規約は監査や行政確認において、協議会体制を明示する重要な資料となります。
+  </p>
+
+  <!-- 現場で対応（黄） -->
+  <div class="card card-y">
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>担当現場の災防協運営規約雛形Excel　＞Excel内メモ参照して必要項目を入力<br>
+    └ デスクトップアプリ「Excel」で開いてください（ブラウザは非推奨）</li>
+    <li>A4用紙に印刷し、現場の「災防協ファイル」の先頭へ綴じ込み</li>
+    <li>ファイリング後、建築事務へ完了報告</li>
+  </ul>
+  </div>
+
+  <!-- 建築事務がサポート（灰） -->
+  <div class="card card-g">
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>必要に応じて雛形の所在案内や補足説明を実施</li>
+    <li>規約の記載内容について不備がないか確認</li>
+    <li>監査・行政対応へ向けて、規約の整備状況を管理</li>
+  </ul>
+  </div>
+
+  <!-- 注意（赤） -->
+  <div class="card card-r" role="alert">
+  <h3><i data-lucide="triangle-alert"></i> 注意</h3>
+  <p>
+  災防協の開催曜日や開始日は、協議会案内や議事録作成にも利用されます。<br>
+  確定前の仮情報を入力した場合は、確定後に必ず更新してください。
+  </p>
+  </div>
+
+  <h3>手順</h3>
+  <ol>
+    <li>どちらかで雛形Excelへアクセス：<br>
+    ① 下記「ファイルの場所」からフォルダへ<br>
+    ② Teams現場チームの投稿から直接雛形Excelへ</li>
     <li>担当現場の雛形Excelを右クリックしてExcelアプリで開く（ブラウザNG）</li>
     <li>Excel内メモを参照して内容を確認、入力</li>
     <li>A4で印刷し、現場の災防協ファイルへ綴じ込む</li>
@@ -1112,86 +1112,86 @@ th,td{
   </ol>
 
   <h3>ファイルの場所</h3>
-        <ul>
-          <li>
-          <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgAODMzj6IAkRqB36nIcTVkUAYp7whZJkTA9HBww5bKD8AM?e=63U1rS" target="_blank">
-            こちらからアクセスできます。
-          </a>
-          </li>
-          <li>フォルダ：【災防協運営規約】現場ごと</li>
-          <li>ファイル：【災害防止協議会規約】工期末 現場名.xlsx</li>
-          <li>雛形が見つからない場合は、建築事務へご連絡ください。</li>
-        </ul>
+  <ul>
+    <li>
+    <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgAODMzj6IAkRqB36nIcTVkUAYp7whZJkTA9HBww5bKD8AM?e=63U1rS" target="_blank">
+    こちらからアクセスできます。
+    </a>
+    </li>
+    <li>フォルダ：【災防協運営規約】現場ごと</li>
+    <li>ファイル：【災害防止協議会規約】工期末 現場名.xlsx</li>
+    <li>雛形が見つからない場合は、建築事務へご連絡ください。</li>
+  </ul>
 
 </section>
 
-<!-- ===========================
-     【任意】運用確認・提案（1）
-   =========================== -->
+  <!-- ===========================
+  【任意】運用確認・提案（1）
+  =========================== -->
 <section id="sec-plus-1" class="section" tabindex="-1" aria-labelledby="sec-plus-1-title">
   <h1 id="sec-plus-1-title">デジタルサイネージの活用</h1>
 
   <p class="lead">
-    公共工事では、施工体系図を仮囲いなどの見やすい場所へ掲示することが建設業法に基づき求められています。<br>
-    弊社では、従来の紙掲示に代えて、デジタルサイネージによる表示方式を採用する現場が増えつつあります。
+  公共工事では、施工体系図を仮囲いなどの見やすい場所へ掲示することが建設業法に基づき求められています。<br>
+  弊社では、従来の紙掲示に代えて、デジタルサイネージによる表示方式を採用する現場が増えつつあります。
   </p>
 
   <!-- 現場で対応（黄） -->
   <div class="card card-y">
-    <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-    <ul>
-      <li>モニターの設置・管理</li>
-      <li>準備：コンテンツのレイアウト・スケジュール設定の要望を建築事務へ伝える</li>
-      <li>運用：コンテンツ・スケジュールの更新</li>
-      <li>エラー対応（電源入れ直し・JGS㈱へ問い合わせ）</li>
-    </ul>
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>モニターの設置・管理</li>
+    <li>準備：コンテンツのレイアウト・スケジュール設定の要望を建築事務へ伝える</li>
+    <li>運用：コンテンツ・スケジュールの更新</li>
+    <li>エラー対応（電源入れ直し・JGS㈱へ問い合わせ）</li>
+  </ul>
   </div>
 
   <!-- 建築事務がサポート（灰） -->
   <div class="card card-g">
-    <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-    <ul>
-      <li>JGS㈱見積書取り寄せ、設置までのサポート</li>
-      <li>現場員から要望ヒアリング、コンテンツ作成・スケジュール設定（初回）</li>
-      <li>現場開始後の表示内容変更・追加作成のサポート</li>
-    </ul>
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>JGS㈱見積書取り寄せ、設置までのサポート</li>
+    <li>現場員から要望ヒアリング、コンテンツ作成・スケジュール設定（初回）</li>
+    <li>現場開始後の表示内容変更・追加作成のサポート</li>
+  </ul>
   </div>
 
   <!-- 補足 -->
   <div class="card card-g">
-    <h3><i data-lucide="info"></i> 補足（コンテンツについて）</h3>
-    <div class="body">
-サイネージへ表示するコンテンツは「建設SIGNESS」というシステムで作成します。<br>
-施工体系図以外にも、予定表や天気予報などのオブジェクトを表示できます。<br>
-「デジタルサイネージ実例」フォルダの画像・動画をご確認いただき、<br>
-表示したいオブジェクトとレイアウトのご要望をTeamsにてお知らせください。<br>
-※コンテンツ作成は内容によっては、1週間ほどかかります。
-    </div>
+  <h3><i data-lucide="info"></i> 補足（コンテンツについて）</h3>
+  <div class="body">
+  サイネージへ表示するコンテンツは「建設SIGNESS」というシステムで作成します。<br>
+  施工体系図以外にも、予定表や天気予報などのオブジェクトを表示できます。<br>
+  「デジタルサイネージ実例」フォルダの画像・動画をご確認いただき、<br>
+  表示したいオブジェクトとレイアウトのご要望をTeamsにてお知らせください。<br>
+  ※コンテンツ作成は内容によっては、1週間ほどかかります。
+  </div>
   </div>
 
 
   <h3>設置までの流れのイメージ</h3>
-    <ol>
-      <li>打ち合わせ<br>
-      └ こちらからお電話にて確認します。ご対応をお願いします。</li>
-      <li>仮囲い設置後にサイネージモニター設置、アカウント取得<br>
-      └ JGS㈱が現場へ伺いサポートします。ログイン方法などを確認してください。</li>
-      <li>コンテンツ作成・スケジュール設定をしてTeams現場チームにて共有します。<br>
-      <li>問題なく配信されていること、レイアウト調整について確認</li>
-    </ol>
+  <ol>
+    <li>打ち合わせ<br>
+    └ こちらからお電話にて確認します。ご対応をお願いします。</li>
+    <li>仮囲い設置後にサイネージモニター設置、アカウント取得<br>
+    └ JGS㈱が現場へ伺いサポートします。ログイン方法などを確認してください。</li>
+    <li>コンテンツ作成・スケジュール設定をしてTeams現場チームにて共有します。<br>
+    <li>問題なく配信されていること、レイアウト調整について確認</li>
+  </ol>
 
   <h3>問い合わせ先（エラー対応）</h3>
-<ul>
+  <ul>
     <li>設置サポート・初期設定・エラー対応はJGS㈱が担当します。</li>
     <li>エラー発生時は、いちど「電源の入れ直し」をお試しください。</li>
     <li>解消しない場合はJGS㈱へ連絡し、併せて建築事務へ共有をお願いします。</li>
-</ul>
+  </ul>
 
   <h3>ファイルの場所</h3>
   <ul>
     <li>
     <a href="https://www.dropbox.com/scl/fo/g7tguduxlwl4hxeprq6wc/ANZoRc4gJzyAWdwk5wHPKdc?rlkey=032w3wzwb263eka71ihq3fmm7&st=z1xcewh8&dl=0" target="_blank">
-      こちらからアクセスできます。
+    こちらからアクセスできます。
     </a>
     </li>
     <li>フォルダ：デジタルサイネージ実例</li>
@@ -1202,25 +1202,25 @@ th,td{
 
 </section>
 
-      <!-- ===========================
-           【任意】運用確認・提案（2）
-         =========================== -->
+  <!-- ===========================
+  【任意】運用確認・提案（2）
+  =========================== -->
 
 <section id="sec-plus-2" class="section" tabindex="-1" aria-labelledby="sec-plus-2-title">
   <h1 id="sec-plus-2-title">新規入場者教育動画</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           【必須】現場開始後（1）
-         =========================== -->
-      <section id="sec-after-1" class="section" tabindex="-1" aria-labelledby="sec-after-1-title">
-        <h1 id="sec-after-1-title">Teams確認とリアクション</h1>
-<p class="lead">
+  <!-- ===========================
+  【必須】現場開始後（1）
+  =========================== -->
+<section id="sec-after-1" class="section" tabindex="-1" aria-labelledby="sec-after-1-title">
+  <h1 id="sec-after-1-title">Teams確認とリアクション</h1>
+  <p class="lead">
   建築事務からの連絡は、原則として「Microsoft Teams（現場チーム）」を通じて行います。
-</p>
+  </p>
 
-<div class="card card-y">
+  <div class="card card-y">
   <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
   <ul>
     <li>Teams現場チームの投稿を定期的に確認<br>
@@ -1228,233 +1228,233 @@ th,td{
     <li>確認した投稿には既読済という意味で【👍❤️😆😮】等でリアクション</li>
     <li>対応が必要な内容は、期限を意識して早めに対応</li>
   </ul>
-</div>
+  </div>
 
-<div class="card card-g">
+  <div class="card card-g">
   <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
   <ul>
     <li>配属現場のチームへメンバー追加</li>
     <li>諸連絡・進捗共有・各種対応依頼をTeamsで実施</li>
     <li>急ぎ案件は、Teams＋電話でフォロー</li>
   </ul>
-</div>
+  </div>
 
-<div class="card card-g">
+  <div class="card card-g">
   <h3><i data-lucide="info"></i> 補足（Teams利用のメリット）</h3>
   <p>
-    投稿は現場担当者全員へのフラットな情報共有を目的としています。<br>
+  投稿は現場担当者全員へのフラットな情報共有を目的としています。<br>
   また、PCを確認していただく内容が多いため、Teamsを基本手段としています。<br>
   └ 現場に出ているタイミングでの電話連絡を控えるため
   </p>
-</div>
-
-      </section>
-
-      <!-- ===========================
-           【必須】現場開始後（2）
-         =========================== -->
-      <section id="sec-after-2" class="section" tabindex="-1" aria-labelledby="sec-after-2-title">
-        <h1 id="sec-after-2-title">新規入場者アンケート提出</h1>
-
-        <p class="lead">
-          協力会社は現場入場前に作業員名簿の登録・提出が必要です。<br>
-          現場と事務の役割分担を明確化し、例外対応・注意点も含めて記載します。
-        </p>
-
-        <!-- 現場で対応 -->
-        <div class="card card-y">
-          <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-          <ul>
-            <li>新規入場者教育の実施</li>
-            <li>新規入場者アンケートの誤記・読みにくい字の修正（必要に応じ代筆）</li>
-            <li>スキャンして提出（入場日ごと／協力会社混在OK／毎日推奨）</li>
-            <li>書類提出や名簿登録しなくてもいい作業員の場合、アンケにメモ「書類不要」と記入</li>
-            <li>グリーンサイトから出力できる「QRコード付きアンケート」の利用推進</li>
-          </ul>
-        </div>
-
-        <!-- 建築事務がサポート -->
-        <div class="card card-g">
-          <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-          <ul>
-            <li>名簿登録状況の確認<br>
-              └ 登録済　➡送り出し・受け入れ教育実施日の登録<br>
-              └ 未登録　➡協力会社へ是正依頼</li>
-            <li>該当作業員の所属企業が下請未編成の場合も、協力会社（一次）へ是正依頼</li>
-          </ul>
-        </div>
-
-        <!-- 注意 -->
-        <div class="card card-r" role="alert">
-          <h3><i data-lucide="triangle-alert"></i> 注意</h3>
-          <p>
-            QRコード付きアンケートの「送り出し教育」欄は元請側で登録する項目です。<br>
-            出力時は「送り出し教育を受けましたか？／いいえ」表示で問題ありません。
-          </p>
-        </div>
-
-  <div class="card card-g">
-    <h3><i data-lucide="info"></i> 補足（特別対応）</h3>
-    <p>
-        協力会社の実態によっては、直行直帰などの事情によりQR付アンケの出力・持参が難しい場合があります。<br>
-        現場にて下記のような「特別対応」をお願いできれば大変助かります。</p>
-        <ul>
-          <li>前日までにメール／FAXで送付してもらう</li>
-          <li>現場で代理出力、、、等</li>
-        </ul>
   </div>
 
-        <h3>問い合わせ先（スキャン設定）</h3>
-        <ul>
-          <li>複合機のスキャン初期設定はJGS㈱が実施します。</li>
-          <li>スキャン設定の不具合・変更がある場合はJGS㈱へ連絡し、併せて建築事務へ共有をお願いします。</li>
-        </ul>
-      </section>
+</section>
+
+  <!-- ===========================
+  【必須】現場開始後（2）
+  =========================== -->
+<section id="sec-after-2" class="section" tabindex="-1" aria-labelledby="sec-after-2-title">
+  <h1 id="sec-after-2-title">新規入場者アンケート提出</h1>
+
+  <p class="lead">
+  協力会社は現場入場前に作業員名簿の登録・提出が必要です。<br>
+  現場と事務の役割分担を明確化し、例外対応・注意点も含めて記載します。
+  </p>
+
+  <!-- 現場で対応 -->
+  <div class="card card-y">
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>新規入場者教育の実施</li>
+    <li>新規入場者アンケートの誤記・読みにくい字の修正（必要に応じ代筆）</li>
+    <li>スキャンして提出（入場日ごと／協力会社混在OK／毎日推奨）</li>
+    <li>書類提出や名簿登録しなくてもいい作業員の場合、アンケにメモ「書類不要」と記入</li>
+    <li>グリーンサイトから出力できる「QRコード付きアンケート」の利用推進</li>
+  </ul>
+  </div>
+
+  <!-- 建築事務がサポート -->
+  <div class="card card-g">
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>名簿登録状況の確認<br>
+    └ 登録済　➡送り出し・受け入れ教育実施日の登録<br>
+    └ 未登録　➡協力会社へ是正依頼</li>
+    <li>該当作業員の所属企業が下請未編成の場合も、協力会社（一次）へ是正依頼</li>
+  </ul>
+  </div>
+
+  <!-- 注意 -->
+  <div class="card card-r" role="alert">
+  <h3><i data-lucide="triangle-alert"></i> 注意</h3>
+  <p>
+  QRコード付きアンケートの「送り出し教育」欄は元請側で登録する項目です。<br>
+  出力時は「送り出し教育を受けましたか？／いいえ」表示で問題ありません。
+  </p>
+  </div>
+
+  <div class="card card-g">
+  <h3><i data-lucide="info"></i> 補足（特別対応）</h3>
+  <p>
+  協力会社の実態によっては、直行直帰などの事情によりQR付アンケの出力・持参が難しい場合があります。<br>
+  現場にて下記のような「特別対応」をお願いできれば大変助かります。</p>
+  <ul>
+    <li>前日までにメール／FAXで送付してもらう</li>
+    <li>現場で代理出力、、、等</li>
+  </ul>
+  </div>
+
+  <h3>問い合わせ先（スキャン設定）</h3>
+  <ul>
+    <li>複合機のスキャン初期設定はJGS㈱が実施します。</li>
+    <li>スキャン設定の不具合・変更がある場合はJGS㈱へ連絡し、併せて建築事務へ共有をお願いします。</li>
+  </ul>
+</section>
 
 
 
-<!-- ===========================
-     【必須】現場開始後（3）
-   =========================== -->
+  <!-- ===========================
+  【必須】現場開始後（3）
+  =========================== -->
 <section id="sec-after-3" class="section" tabindex="-1" aria-labelledby="sec-after-3-title">
   <h1 id="sec-after-3-title">協力会社指導（災防協資料）</h1>
 
-<p class="lead">
+  <p class="lead">
   安全書類整備・不備解消については、多くの協力会社の皆さまにご協力をいただいています。<br>
   一方で、弊社⇔協力会社の事務対応だけでは完結せず、現場での調整が必要となる場合があります。
-</p>
+  </p>
 
-<div class="card card-y">
+  <div class="card card-y">
   <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
   <ul>
     <li>協力会社へのルール周知・指導・調整</li>
     <li>TeamsやNI回覧板で共有された資料を協力会社へ配布<br>
-          └ 災防協日程を濱名課長のNIコラボスケジュールへ登録してください。</li>
+    └ 災防協日程を濱名課長のNIコラボスケジュールへ登録してください。</li>
     <li>契約書関係など、権限者同士での調整が必要な場合の対応</li>
     <li>二次以降の下請け協力会社の書類要否判断、建築事務へ共有<br>
-          └ 現場入場なし、不備解消見込みなしのため、下請編成から削除する場合…等</li>
+    └ 現場入場なし、不備解消見込みなしのため、下請編成から削除する場合…等</li>
   </ul>
-</div>
+  </div>
 
-<div class="card card-g">
+  <div class="card card-g">
   <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
   <ul>
     <li>安全書類の提出・修正依頼</li>
     <li>災防協前日までに、名簿等の不備状況をまとめた資料をTeamsにて共有</li>
     <li>協力会社向け資料の共有（公式資料、事務で作成したもの等）</li>
   </ul>
-</div>
+  </div>
 
-<div class="card card-r" role="alert">
+  <div class="card card-r" role="alert">
   <h3><i data-lucide="triangle-alert"></i> 書類対応が進まない場合</h3>
   <p>
-    協力会社から対応いただけない場合、依頼メールのCCに現場所長を追加します。<br>
-     └ これでほとんどの協力会社は対応してくれると思います。<br>
-     └ 実際に現場所長と協力会社間で調整が必要な場合は、ご対応をお願いします。
+  協力会社から対応いただけない場合、依頼メールのCCに現場所長を追加します。<br>
+  └ これでほとんどの協力会社は対応してくれると思います。<br>
+  └ 実際に現場所長と協力会社間で調整が必要な場合は、ご対応をお願いします。
   </p>
-</div>
+  </div>
 
-<div class="card card-g">
-    <h3><i data-lucide="info"></i> 補足</h3>
-    <div class="body">
-      <ul>
-        <li>災防協以外でも、協力会社の皆さまと話す機会があれば<br>
-          「建築事務からのメールの確認・対応」についてお声掛けください。</li>
-        <li>掲示・資料フォルダへ各種資料を格納します。適宜ご活用ください。</li>
-      </ul>
-    </div>
-</div>
+  <div class="card card-g">
+  <h3><i data-lucide="info"></i> 補足</h3>
+  <div class="body">
+  <ul>
+    <li>災防協以外でも、協力会社の皆さまと話す機会があれば<br>
+    「建築事務からのメールの確認・対応」についてお声掛けください。</li>
+    <li>掲示・資料フォルダへ各種資料を格納します。適宜ご活用ください。</li>
+  </ul>
+  </div>
+  </div>
 
-        <h3>ファイルの場所</h3>
-        <ul>
-          <li>
-          <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgCU26DytBksSbGc_MyRcGAHAaceC0BNxMVQXRf9Z1tqbcA?e=rS0Stx" target="_blank">
-            こちらからアクセスできます。
-          </a>
-          </li>
-          <li>フォルダ：【掲示・資料】協力会社向け</li>
-          <li>「小俣組レポート」について<br>
-          安全書類に関する基礎知識をコンパクトにまとめた資料です。</li>
-          <li>協力会社へお伝えしたいテーマや話題、資料作成依頼等あればTeamsにてご連絡ください。</li>
-        </ul>
+  <h3>ファイルの場所</h3>
+  <ul>
+    <li>
+    <a href="https://komatagumi.sharepoint.com/:f:/s/msteams_0eda95/IgCU26DytBksSbGc_MyRcGAHAaceC0BNxMVQXRf9Z1tqbcA?e=rS0Stx" target="_blank">
+    こちらからアクセスできます。
+    </a>
+    </li>
+    <li>フォルダ：【掲示・資料】協力会社向け</li>
+    <li>「小俣組レポート」について<br>
+    安全書類に関する基礎知識をコンパクトにまとめた資料です。</li>
+    <li>協力会社へお伝えしたいテーマや話題、資料作成依頼等あればTeamsにてご連絡ください。</li>
+  </ul>
 
-      </section>
+</section>
 
 
-<!-- ===========================
-     【必須】現場開始後（4）
-   =========================== -->
+  <!-- ===========================
+  【必須】現場開始後（4）
+  =========================== -->
 <section id="sec-after-4" class="section" tabindex="-1" aria-labelledby="sec-after-4-title">
   <h1 id="sec-after-4-title">施工体制台帳作成・検査対応</h1>
 
   <p class="lead">
-    施工体制台帳は、現場の施工体制を整理・把握するための書類です。<br>
-    現場と建築事務で役割分担し、整備・更新を行います。
+  施工体制台帳は、現場の施工体制を整理・把握するための書類です。<br>
+  現場と建築事務で役割分担し、整備・更新を行います。
   </p>
 
   <div class="card card-y">
-    <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
-    <ul>
-      <li>グリーンサイトからの出力</li>
-      <li>紙面へ出力する場合は、キングジムへの綴じ込み</li>
-      <li>施工体制台帳・再下請負通知書・編成表などを、現場で即時確認できるよう準備、場所の把握</li>
-      <li>書類不備について、協力会社へ指導</li>    
-    </ul>
+  <h3><i data-lucide="hard-hat"></i> 現場で対応</h3>
+  <ul>
+    <li>グリーンサイトからの出力</li>
+    <li>紙面へ出力する場合は、キングジムへの綴じ込み</li>
+    <li>施工体制台帳・再下請負通知書・編成表などを、現場で即時確認できるよう準備、場所の把握</li>
+    <li>書類不備について、協力会社へ指導</li>    
+  </ul>
   </div>
 
   <div class="card card-g">
-    <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
-    <ul>
-      <li>施工体制台帳に関する安全書類（グリーンファイル）再チェック</li>
-      <li>不備修正依頼、提出・不備状況の管理表「グリーンファイル管理表」を更新<br>
-      └ 管理表の共有が必要な場合はお知らせください。</li>
-      <li>作業員の社会保険未加入者について、一括是正・特別対応</li>
-    </ul>
+  <h3><i data-lucide="handshake"></i> 建築事務がサポート</h3>
+  <ul>
+    <li>施工体制台帳に関する安全書類（グリーンファイル）再チェック</li>
+    <li>不備修正依頼、提出・不備状況の管理表「グリーンファイル管理表」を更新<br>
+    └ 管理表の共有が必要な場合はお知らせください。</li>
+    <li>作業員の社会保険未加入者について、一括是正・特別対応</li>
+  </ul>
   </div>
 
   <div class="card card-r" role="alert">
-    <h3><i data-lucide="triangle-alert"></i> 検査前・検査時の対応</h3>
-    <ul>
-      <li>不備未解消の協力会社へ建築事務からのメールを見て対応するよう、お声かけ下さい。</li>
-      <li>台帳整備のサポートが必要な場合、検査日程がわかり次第、建築事務へ共有してください。<br>
-      └ 修正依頼には時間を要するため、1ヵ月前からの整備開始をおすすめします。</li>
-      <li>検査時に名簿上の社保未加入者について指摘された場合、<br>
-      「この方は現場に入場させていません。保険情報は是正依頼済です」と説明してください。</li>
-    </ul>
+  <h3><i data-lucide="triangle-alert"></i> 検査前・検査時の対応</h3>
+  <ul>
+    <li>不備未解消の協力会社へ建築事務からのメールを見て対応するよう、お声かけ下さい。</li>
+    <li>台帳整備のサポートが必要な場合、検査日程がわかり次第、建築事務へ共有してください。<br>
+    └ 修正依頼には時間を要するため、1ヵ月前からの整備開始をおすすめします。</li>
+    <li>検査時に名簿上の社保未加入者について指摘された場合、<br>
+    「この方は現場に入場させていません。保険情報は是正依頼済です」と説明してください。</li>
+  </ul>
   </div>
 
   <div class="card card-g">
-    <h3><i data-lucide="info"></i> 補足（民間工事・社保未加入者の扱い）</h3>
-    <p>
-        民間工事では、グリーンサイトによるクラウド管理が一般的になりつつあります。<br>
-        └ 現場で各種書類を即時確認できるよう準備、場所の把握していることが前提です。<br>
-        なお、グリーンファイルの再チェックや修正依頼については、協力会社からの対応含め、<br>
-        どうしても公共工事優先となってしまうため、不備が多く残った状態となります。
-    </p>
+  <h3><i data-lucide="info"></i> 補足（民間工事・社保未加入者の扱い）</h3>
+  <p>
+  民間工事では、グリーンサイトによるクラウド管理が一般的になりつつあります。<br>
+  └ 現場で各種書類を即時確認できるよう準備、場所の把握していることが前提です。<br>
+  なお、グリーンファイルの再チェックや修正依頼については、協力会社からの対応含め、<br>
+  どうしても公共工事優先となってしまうため、不備が多く残った状態となります。
+  </p>
   </div>
 
   <h3>台帳検査対策について</h3>
   <p>
-    下記は、主に過去の台帳検査で指摘を受けた項目についての対策例です。<br>
-    詳細は「🔗参照」より、該当セクションをご確認ください。<br>
-    なお、原則として現場でのご対応をお願いします。<br>
-    もしサポートが必要な場合は、検査日程および対象業者を早めに共有してください。
+  下記は、主に過去の台帳検査で指摘を受けた項目についての対策例です。<br>
+  詳細は「🔗参照」より、該当セクションをご確認ください。<br>
+  なお、原則として現場でのご対応をお願いします。<br>
+  もしサポートが必要な場合は、検査日程および対象業者を早めに共有してください。
   </p>
 
   <h3>社会保険未加入者　<a href="#sec-field-2">🔗参照</a></h3>
   <p>
-    社保未加入の作業員は、名簿上「現場未入場扱い」とする。
+  社保未加入の作業員は、名簿上「現場未入場扱い」とする。
   </p>
   <ol>
     <li>「送り出し教育実施日」のみ登録、「受入教育実施日」は未登録（空白）のまま保留<br>
-      └ 協力会社側で送り出し済だが、元請としては未受入・未入場という状態とする</li>
+    └ 協力会社側で送り出し済だが、元請としては未受入・未入場という状態とする</li>
     <li>協力会社への是正依頼は、約2か月に1回、グリーンサイトの一括是正機能にて実施</li>
     <li>保険情報の更新を確認後、「受入教育実施日」を登録し、入場済とする</li>
   </ol>
 
-    <h3>現場代理人の入場日　<a href="#sec-field-3">🔗参照</a></h3>
+  <h3>現場代理人の入場日　<a href="#sec-field-3">🔗参照</a></h3>
   <p>
-    ① 現場代理人の入場日は名簿上、必ず現場入場済とする。
+  ① 現場代理人の入場日は名簿上、必ず現場入場済とする。
   </p>
   <ul>
     <li>新規入場者アンケートの有無に関わらず、必ず「送り出し・受入教育実施日」を登録</li>
@@ -1463,19 +1463,19 @@ th,td{
     └ 業者内で誰も入場していない場合は、未登録のまま保留</li>
   </ul>
   <p>
-    ② 入場日の整合確認
+  ② 入場日の整合確認
   </p>
   <ul>
     <li>請負関係（一次 ⇒ 二次 ⇒ 三次…）の入場日順に、矛盾がないか確認</li>
     <li>矛盾がある場合は、日付の登録・調整を行う（実際の入場日と相違することとなる）</li>
     └ NG例<br>
-  ・下請業者の入場日が登録されているのに、上位業者は未登録（未入場の状態）<br>
-  ・上位業者より下請業者の入場日が先になっている</li>
+    ・下請業者の入場日が登録されているのに、上位業者は未登録（未入場の状態）<br>
+    ・上位業者より下請業者の入場日が先になっている</li>
   </ul>
 
-    <h3>在留カードの管理　<a href="#sec-field-4">🔗参照</a></h3>
+  <h3>在留カードの管理　<a href="#sec-field-4">🔗参照</a></h3>
   <p>
-    新規入場時に確認し、管理している旨を説明してください。
+  新規入場時に確認し、管理している旨を説明してください。
   </p>
   <ul>
     <li><a href="https://www.dropbox.com/scl/fi/gcvwobxh3zozfgf8s8vk0/.pdf?rlkey=1s2twlp9f3fv1c7koz650w3k4&st=mpa4ht7g&dl=0" target="_blank">
@@ -1484,118 +1484,82 @@ th,td{
   </ul>
 
   <p class="lead">
-    ※ 👆台帳検査対策の部分と、これ以降のセクションは作成中です。
+  ※ 👆台帳検査対策の部分と、これ以降のセクションは作成中です。
   </p>
 
 </section>
 
 
-      <!-- ===========================
-           現場対応・検査対策（1）
-         =========================== -->
-      <section id="sec-field-1" class="section" tabindex="-1" aria-labelledby="sec-field-1-title">
-        <h1 id="sec-field-1-title">工期延長対応手順</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+  <!-- ===========================
+  現場対応・検査対策
+  =========================== -->
 
-      <!-- ===========================
-           現場対応・検査対策（2）
-         =========================== -->
-      <section id="sec-field-2" class="section" tabindex="-1" aria-labelledby="sec-field-2-title">
-        <h1 id="sec-field-2-title">社会保険未加入者</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-field-schedule" class="section" tabindex="-1"
+  aria-labelledby="sec-field-schedule-title">
+  <h1 id="sec-field-schedule-title">工期延長対応手順</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           現場対応・検査対策（3）
-         =========================== -->
-      <section id="sec-field-3" class="section" tabindex="-1" aria-labelledby="sec-field-3-title">
-        <h1 id="sec-field-3-title">現場代理人の入場日</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-field-insurance" class="section" tabindex="-1"
+  aria-labelledby="sec-field-insurance-title">
+  <h1 id="sec-field-insurance-title">社会保険未加入者</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           現場対応・検査対策（4）
-         =========================== -->
-      <section id="sec-field-4" class="section" tabindex="-1" aria-labelledby="sec-field-4-title">
-        <h1 id="sec-field-4-title">在留カードの管理</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-field-agent" class="section" tabindex="-1"
+  aria-labelledby="sec-field-agent-title">
+  <h1 id="sec-field-agent-title">現場代理人の入場日</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           現場対応・検査対策（5）
-         =========================== -->
-      <section id="sec-field-5" class="section" tabindex="-1" aria-labelledby="sec-field-5-title">
-        <h1 id="sec-field-5-title">専任技術者証明書類</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-field-residence" class="section" tabindex="-1"
+  aria-labelledby="sec-field-residence-title">
+  <h1 id="sec-field-residence-title">在留カードの管理</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           現場対応・検査対策（6）
-         =========================== -->
-      <section id="sec-field-6" class="section" tabindex="-1" aria-labelledby="sec-field-6-title">
-        <h1 id="sec-field-6-title">ポスターでアピール</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-field-engineer" class="section" tabindex="-1"
+  aria-labelledby="sec-field-engineer-title">
+  <h1 id="sec-field-engineer-title">専任技術者証明書類</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           お役立ち・Tips（1）
-         =========================== -->
-      <section id="sec-tips-1" class="section" tabindex="-1" aria-labelledby="sec-tips-1-title">
-        <h1 id="sec-tips-1-title">iPadでグリーンサイト閲覧</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-field-poster" class="section" tabindex="-1"
+  aria-labelledby="sec-field-poster-title">
+  <h1 id="sec-field-poster-title">ポスターでアピール</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           お役立ち・Tips（2）
-         =========================== -->
-      <section id="sec-tips-2" class="section" tabindex="-1" aria-labelledby="sec-tips-2-title">
-        <h1 id="sec-tips-2-title">Edge記憶のパスワード削除</h1>
 
-        <p class="lead">
-          Edge に保存された不要なログイン情報（ID/パスワード）を削除して、
-          誤ログインを防ぐための手順です。
-        </p>
+  <!-- ===========================
+  お役立ち・Tips
+  =========================== -->
 
-        <h3>① この業務の目的</h3>
-        <p class="lead">不要な保存パスワードを削除し、誤アカウントでのログインを防ぐための操作です。</p>
+<section id="sec-tips-ipad" class="section" tabindex="-1"
+  aria-labelledby="sec-tips-edge-ipad〇">
+  <h1 id="sec-tips-edge-ipad">iPadでグリーンサイト閲覧</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-        <h3>② 手順</h3>
-        <ol>
-          <li>右上メニュー →「設定」を開く</li>
-          <li>「パスワードとオートフィル」→「Microsoft パスワードマネージャー」</li>
-          <li>対象のIDを選択（例：グリーンサイト＝<code>kensetsu-site.com</code>）</li>
-          <li>Windowsセキュリティ認証（PCログインパスワード）を入力</li>
-          <li>削除</li>
-        </ol>
+<section id="sec-tips-edge-password" class="section" tabindex="-1"
+  aria-labelledby="sec-tips-edge-edge-password">
+  <h1 id="sec-tips-edge-edge-password">Edge記憶のパスワード削除</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-        <!-- 補足 -->
-        <article class="notice muted" role="note">
-          <h3>【補足】よくある質問</h3>
-          <ul>
-            <li>保存パスワードが多いほど誤ログインが起きやすくなります。</li>
-            <li>共有PCでは、定期的な整理がおすすめです。</li>
-          </ul>
-        </article>
-      </section>
+<section id="sec-tips-dropbox-star" class="section" tabindex="-1"
+  aria-labelledby="sec-tips-edge-dropbox-star">
+  <h1 id="sec-tips-edge-dropbox-star">Dropbox「スター」活用</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           お役立ち・Tips（3）
-         =========================== -->
-      <section id="sec-tips-3" class="section" tabindex="-1" aria-labelledby="sec-tips-3-title">
-        <h1 id="sec-tips-3-title">Dropbox「スター」活用</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
+<section id="sec-tips-ai" class="section" tabindex="-1"
+  aria-labelledby="sec-tips-edge-ai">
+  <h1 id="sec-tips-edge-ai">AI活用のススメ</h1>
+  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
 
-      <!-- ===========================
-           お役立ち・Tips（4）
-         =========================== -->
-      <section id="sec-tips-4" class="section" tabindex="-1" aria-labelledby="sec-tips-4-title">
-        <h1 id="sec-tips-4-title">AI活用のススメ</h1>
-        <p class="lead">この項目は準備中です。順次更新していきます。</p>
-      </section>
-
-</main>
+  </main>
     <!-- /#content -->
   </div>
   <!-- /#app.layout -->
