@@ -62,6 +62,25 @@ a{ color:var(--link); }
 a:visited{ color:var(--link-visited); }
 h1,h2,h3{ line-height:1.3; }
 
+h3 {
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+}
+
+/* 全体アイコン */
+.icon-heading svg,
+.card h3 svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em; /* 文字とベースラインを揃える */
+}
+
+
 /* --- リード文（共通） --------------------------------- */
 .lead{
   font-size: 16px;          /* 本文14pxに対して+2px */
@@ -614,10 +633,11 @@ th,td{
   <ul>
     <li><a href="#sec-field-schedule">工期延長対応手順</a></li>
     <li><a href="#sec-field-insurance">社会保険未加入者</a></li>
-    <li><a href="#sec-field-agent">現場代理人の入場日</a></li>
+    <li><a href="#sec-field-agent">受け入れ教育実施日</a></li>
     <li><a href="#sec-field-residence">在留カードの管理</a></li>
     <li><a href="#sec-field-engineer">専任技術者証明書類</a></li>
     <li><a href="#sec-field-poster">ポスターでアピール</a></li>
+    <li><a href="#sec-field-elevator">エレベーター工事会社</a></li>
   </ul>
   </details>
 
@@ -635,8 +655,11 @@ th,td{
 
   <!-- 最終更新日 -->
   <p class="last-updated">
-    最終更新：2026-04-24<br>
-    【必須】協力会社指導(災防協資料) ▶一部変更
+    最終更新：2026-04-30<br>
+    検査対策　社会保険未加入者 ▶追加<br>
+    検査対策　受け入れ教育実施日 ▶追加<br>
+    検査対策　エレベーター工事会社 ▶追加<br>
+
   </p> 
 
   </aside>
@@ -1597,7 +1620,7 @@ th,td{
     <li>保険情報の更新を確認後、「受入教育実施日」を登録し、入場済とする</li>
   </ol>
 
-  <h3>現場代理人の入場日　<a href="#sec-field-agent">🔗参照</a></h3>
+  <h3>受け入れ教育実施日　<a href="#sec-field-agent">🔗参照</a></h3>
   <p>
   ① 現場代理人の入場日は名簿上、必ず現場入場済とする。
   </p>
@@ -1736,44 +1759,222 @@ th,td{
 </section>
 
 
-  <!-- ===========================
-  現場対応・検査対策
+<!-- ===========================
+  【現場対応・検査対策】
   =========================== -->
-
-<section id="sec-field-schedule" class="section" tabindex="-1"
-  aria-labelledby="sec-field-schedule-title">
+<section id="sec-field-schedule" class="section" tabindex="-1" aria-labelledby="sec-field-schedule-title">
   <h1 id="sec-field-schedule-title">工期延長対応手順</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
 
-<section id="sec-field-insurance" class="section" tabindex="-1"
-  aria-labelledby="sec-field-insurance-title">
+<!-- ===========================
+  【現場対応・検査対策】社会保険未加入者
+  =========================== -->
+<section id="sec-field-insurance" class="section" tabindex="-1" aria-labelledby="sec-field-insurance-title">
   <h1 id="sec-field-insurance-title">社会保険未加入者</h1>
-  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+
+
+  <p class="lead">
+  社会保険未加入者に関する施工体制台帳上の取り扱いについて、運用例を紹介します。
+  </p>
+
+  <!-- 原則ルール -->
+  <h3 class="icon-heading">
+  <i data-lucide="check-circle"></i> 原則ルール
+  </h3>
+  <p>
+  社会保険未加入の作業員は現場入場不可<br>
+  社会保険情報（雇用保険・健康保険・年金保険）を更新後、現場入場とするのが原則
+  </p>
+
+  <!-- 現場対応・検査対策（黄） -->
+  <div class="card card-y">
+  <h3><i data-lucide="hard-hat"></i>実情を踏まえた運用例（参考）</h3>
+  <div class="body">
+  実務上、社会保険未加入または加入予定の作業員が現場入場しているケースがある<br>
+  検査対応としては、名簿上「現場未入場」として、是正中の状態を明確にする
+  </div>
+  <ul>
+    <li>「送り出し教育実施日」のみ登録し、「受入教育実施日」は未登録（空白）のまま保留</li>
+    <li>協力会社側では送り出し済だが、元請としては未受入・未入場の状態とする</li>
+    <li>協力会社への是正依頼は、約2か月に1回、グリーンサイトの一括是正機能にて実施</li>
+    <li>社会保険情報の更新を確認後、「受入教育実施日」を登録し、入場済とする</li>
+  </ul>
+  </div>
+
+  <!-- 注意（赤） -->
+  <div class="card card-r" role="alert">
+  <h3><i data-lucide="triangle-alert"></i> 注意点</h3>
+  <ul>
+    <li>社会保険未加入のまま、名簿上「入場扱い」としないことが重要です。</li>
+    <li>検査時には「是正依頼中」「未受入のため未入場扱い」と説明できる状態を維持してください。</li>
+  </ul>
+  </div>
+
+  <p class="lead">
+    ※本セクションは、施工体制台帳における原則ルールを否定するものではありません。<br>
+    実務上、原則どおりの運用が難しいケースを踏まえ、検査対応として説明可能な整理方法を紹介しています。<br>
+    記載している内容はあくまで参考例です。現場の状況に応じてご判断をお願いします。
+  </p>
+
 </section>
 
-<section id="sec-field-agent" class="section" tabindex="-1"
-  aria-labelledby="sec-field-agent-title">
-  <h1 id="sec-field-agent-title">現場代理人の入場日</h1>
-  <p class="lead">この項目は準備中です。順次更新していきます。</p>
+
+
+<!-- ===========================
+  【現場対応・検査対策】
+  =========================== -->
+<section id="sec-field-agent" class="section" tabindex="-1" aria-labelledby="sec-field-agent-title">
+  <h1 id="sec-field-agent-title">受け入れ教育実施日</h1>
+
+
+<p class="lead">
+    受け入れ教育実施日に関する施工体制台帳上の取り扱いについて、運用例を紹介します。
+  </p>
+
+  <!-- 原則 -->
+<h3 class="icon-heading"><i data-lucide="check-circle"></i> 基本的な考え方</h3>
+<p>
+  施工体制台帳では、現場を管理する立場にある責任者が、<br>
+  現場に関与していない状態で体制が構築されていることは不備と見なされる可能性があります。
+</p>
+
+  <ul>
+    <li>現場代理人：<br>
+    作業の有無に関わらず、現場に関与する責任者として現場入場していることが前提</li>
+    <li>請負関係：<br>
+    上位業者が未入場で下位業者が入場している（もしくは前後している）体制は、<br>
+    請負関係と入場順が整合していないものとして不備と見なされる</li>
+  </ul>
+
+
+ <!-- 現場対応①：現場代理人本人 -->
+  <div class="card card-y">
+    <h3>
+      <i data-lucide="hard-hat"></i>
+      実情を踏まえた運用例（参考）：現場代理人の入場日
+    </h3>
+    <ul>
+      <li>受け入れ教育実施日は空白にしない（検査の入口を潰す）</li>
+      <li>新規アンケ提出の有無に関わらず、打合せのみで現場入場したものとして日付を登録</li>
+      <li>登録する日付は「当該業者の最初の入場者の日、または工期開始日」とする</li>
+      <li>上位・下位業者の入場日や工期開始日との前後関係に留意する</li>
+    </ul>
+  </div>
+
+  <!-- 現場対応②：請負関係 -->
+  <div class="card card-y">
+    <h3>
+      <i data-lucide="hard-hat"></i>
+      実情を踏まえた運用例（参考）：請負関係の入場日
+    </h3>
+    <ul>
+      <li>検査前に、元請から下請までの入場日を確認する</li>
+      <li>上位業者よりも下位業者が先に入場しているなど、矛盾がある場合は事前に調整する<br>
+        └ 新規アンケ記載日との相違が生じる可能性がある点は認識した上で対応する</li>
+    </ul>
+  </div>
+
+<!-- 新規アンケの取り扱い（参考） -->
+  <div class="card card-g">
+    <h3>
+      <i data-lucide="file-text"></i>
+      新規アンケの考え方
+    </h3>
+    <ul>
+      <li>弊社の運用ルールでは、打合せや現場管理のみで現場作業がない場合、新規アンケの提出は不要としている<br>
+      そのため、現場入場済の物的証拠となる書類は存在しない</li>
+<li>検査時には「現場作業なし＝新規アンケ提出不要」と説明できる状態を維持してください。</li>
+  <li>実際入場していない現場代理人の新規アンケも準備しておきたい場合は、現場側でご対応をお願いします。</li>  
+</ul>
+  </div>
+
+    <p class="lead">
+  <br>※本章は、施工体制台帳における原則ルールを否定するものではありません。<br>
+  実務上、原則どおりの整理が難しいケースを踏まえ、検査対応として運用例を紹介しています。<br>
+  記載している内容はあくまで参考例です。現場の状況に応じてご判断をお願いします。
+  </p>
+
 </section>
 
-<section id="sec-field-residence" class="section" tabindex="-1"
-  aria-labelledby="sec-field-residence-title">
+
+
+<!-- ===========================
+  【現場対応・検査対策】
+  =========================== -->
+<section id="sec-field-residence" class="section" tabindex="-1" aria-labelledby="sec-field-residence-title">
   <h1 id="sec-field-residence-title">在留カードの管理</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
 
-<section id="sec-field-engineer" class="section" tabindex="-1"
-  aria-labelledby="sec-field-engineer-title">
+<!-- ===========================
+  【現場対応・検査対策】
+  =========================== -->
+<section id="sec-field-engineer" class="section" tabindex="-1" aria-labelledby="sec-field-engineer-title">
   <h1 id="sec-field-engineer-title">専任技術者証明書類</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
 
-<section id="sec-field-poster" class="section" tabindex="-1"
-  aria-labelledby="sec-field-poster-title">
+<!-- ===========================
+  【現場対応・検査対策】
+  =========================== -->
+<section id="sec-field-poster" class="section" tabindex="-1" aria-labelledby="sec-field-poster-title">
   <h1 id="sec-field-poster-title">ポスターでアピール</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
+</section>
+
+<!-- ===========================
+  【現場対応・検査対策】エレベーター工事会社の取り扱い
+  =========================== -->
+<section id="sec-field-elevator" class="section" tabindex="-1" aria-labelledby="sec-field-elevator-title">
+  <h1 id="sec-field-elevator-title">エレベーター工事会社</h1>
+
+  <p class="lead">
+  エレベーター工事における施工体制台帳の記載方法について、運用例を紹介します。</p>
+
+  <h3 class="icon-heading">
+  <i data-lucide="check-circle"></i> 基本的な考え方</h3>
+  <p>
+  施工体制台帳は、原則として契約関係どおりに作成<br>
+  つまり、元請と契約相手となっている企業を一次下請として整理するのが基本
+  </p>
+
+  <!-- 現場で対応（黄） -->
+  <div class="card card-y">
+  <h3>
+  <i data-lucide="hard-hat"></i>実情を踏まえた運用例（参考）</h3>
+  <div class="body">
+エレベーター工事では、元請の契約相手が「代理人」であるケースが多い<br>
+そのため、「実施工・安全管理を行う協力会社」を一次下請として扱う運用を可としている
+</div>
+  </div>
+
+  <!-- 補足 -->
+  <div class="card card-g">
+  <h3><i data-lucide="info"></i> 補足（実例・運用実績）</h3>
+  <div class="body">
+  上記の取り扱いは、当社においてこれまでも継続して運用しており、<br>
+  過去の施工体制台帳検査においても、特段の指摘を受けることなく対応できています。
+  </div>
+  </div>
+
+  <!-- 注意（赤） -->
+  <div class="card card-r" role="alert">
+  <h3><i data-lucide="triangle-alert"></i>注意点</h3>
+  <ul>
+    <li>原則は「契約順での整理（元請と契約している代理人が一次）」であることを認識してください。</li>
+    <li>代理人の存在を把握し、説明できるようにしておいてください。</li>
+    <li>検査等で説明を求められた場合に、<br>
+    本運用を採用している理由を説明できる準備をしておくことが重要です。</li>
+  </ul>
+  </div>
+
+  <p class="lead">
+  <br>※本章は、施工体制台帳における原則ルールを否定するものではありません。<br>
+  実務上、原則どおりの整理が難しいケースを踏まえ、検査対応として運用例を紹介しています。<br>
+  記載している内容はあくまで参考例です。現場の状況に応じてご判断をお願いします。
+  </p>
+
 </section>
 
 
@@ -1781,26 +1982,22 @@ th,td{
   お役立ち・Tips
   =========================== -->
 
-<section id="sec-tips-ipad" class="section" tabindex="-1"
-  aria-labelledby="sec-tips-edge-ipad〇">
+<section id="sec-tips-ipad" class="section" tabindex="-1" aria-labelledby="sec-tips-edge-ipad〇">
   <h1 id="sec-tips-edge-ipad">iPadでグリーンサイト閲覧</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
 
-<section id="sec-tips-edge-password" class="section" tabindex="-1"
-  aria-labelledby="sec-tips-edge-edge-password">
+<section id="sec-tips-edge-password" class="section" tabindex="-1" aria-labelledby="sec-tips-edge-edge-password">
   <h1 id="sec-tips-edge-edge-password">Edge記憶のパスワード削除</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
 
-<section id="sec-tips-dropbox-star" class="section" tabindex="-1"
-  aria-labelledby="sec-tips-edge-dropbox-star">
+<section id="sec-tips-dropbox-star" class="section" tabindex="-1" aria-labelledby="sec-tips-edge-dropbox-star">
   <h1 id="sec-tips-edge-dropbox-star">Dropbox「スター」活用</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
 
-<section id="sec-tips-ai" class="section" tabindex="-1"
-  aria-labelledby="sec-tips-edge-ai">
+<section id="sec-tips-ai" class="section" tabindex="-1" aria-labelledby="sec-tips-edge-ai">
   <h1 id="sec-tips-edge-ai">AI活用のススメ</h1>
   <p class="lead">この項目は準備中です。順次更新していきます。</p>
 </section>
